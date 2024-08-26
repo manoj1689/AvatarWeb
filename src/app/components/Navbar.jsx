@@ -1,5 +1,5 @@
 "use client";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 import React, { useState } from "react";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
@@ -8,7 +8,7 @@ import { MdArrowOutward } from "react-icons/md";
 import Demo from "../components/Demo";
 
 const Navbar = () => {
-
+  const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [demo, setDemo] = useState(false);
 
@@ -92,26 +92,27 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden lg:flex flex-row basis-1/4 space-x-6 justify-end items-center">
-            <div
-              onClick={() =>
-                (window.location.href =
-                  "http://smart-grader-app-ts.vercel.app/signIn")
-              }
+          <nav className="flex items-center space-x-4">
+        {/* Show user details if logged in */}
+        {session ? (
+          <>
+            <span className="text-black">{session.user?.name || session.user?.email}</span>
+            <button
+              onClick={() => signOut()}
+              className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
             >
-              <span className="text-gray-900 hover:text-blue-700 font-spline transition duration-300 flex items-center cursor-pointer">
-                <FaSignInAlt className="mr-2" /> Login
-              </span>
-            </div>
-            <div
-              onClick={() =>
-                (window.location.href =
-                  "http://smart-grader-app-ts.vercel.app/createAccount")
-              }
-            >
-              <span className="bg-[#01AFF4] text-white px-4 py-2 font-spline rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer">
-                <FaUser className="mr-2" /> Signup
-              </span>
-            </div>
+              Logout
+            </button>
+          </>
+        ) : (
+          <button
+            onClick={() => signIn("google")}
+            className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+          >
+            Login with Google
+          </button>
+        )}
+      </nav>
           </div>
 
           <div className="lg:hidden">

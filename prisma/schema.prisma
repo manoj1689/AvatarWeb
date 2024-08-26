@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Prisma schema file
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             Int       @id @default(autoincrement())
+  email          String    @unique
+  name           String?
+  password       String?
+  image          String?   // Add this field if you store user profile images
+  emailVerified  DateTime? // Add this field if you need to track email verification
+  accounts       Account[]
+  sessions       Session[]
+  credits        Int       @default(10) // Default 10 credits for new users
+}
+model Account {
+  id                Int       @id @default(autoincrement())
+  userId            Int
+  provider          String
+  providerAccountId String
+  access_token      String?
+  expires_at        Int?
+  scope             String?
+  token_type        String?
+  id_token          String?
+  type              String?  // Add this field if you need it
+  user              User      @relation(fields: [userId], references: [id])
+  
+  @@unique([provider, providerAccountId])
+}
+
+
+
+model Session {
+  id             Int      @id @default(autoincrement())
+  sessionToken   String   @unique
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+  expires        DateTime
+}
