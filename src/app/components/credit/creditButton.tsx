@@ -21,7 +21,7 @@ const CreditButton: React.FC = () => {
       setCredits(response.data.credits);
     } catch (error) {
       console.error('Error fetching credits:', error);
-      setMessage('Failed to fetch credits.');
+      setMessage('Failed  to fetch credits details.');
     }
   };
 
