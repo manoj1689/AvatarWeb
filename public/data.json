@@ -1,0 +1,170 @@
+[
+  {
+    "Prompt ID": 0,
+    "Prompt": "cinematic photo Instagram photo of a woman img in Himachali traditional attire, standing in a mountainous background, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p6.png",
+    "Output Image": "outputs/output_0.png",
+    "Image URL": "images/3ca91b76-ad90-47d2-8686-9db0e9532fab.png"
+  },
+  {
+    "Prompt ID": 1,
+    "Prompt": "cinematic photo Instagram photo of a man img in Naga traditional attire, holding a spear, forest background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p2.png",
+    "Output Image": "outputs/output_1.png",
+    "Image URL": "images/bfb028ce-6619-4de8-a75b-67ce60d9442d.png"
+  },
+  {
+    "Prompt ID": 2,
+    "Prompt": "cinematic photo Instagram photo of a woman img in traditional Bengali saree, standing by the river, peaceful expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p8.png",
+    "Output Image": "outputs/output_2.png",
+    "Image URL": "images/2b111d98-fa8c-4df9-b87e-1a4438818aff.png"
+  },
+  {
+    "Prompt ID": 3,
+    "Prompt": "cinematic photo Instagram photo of a man img in traditional South Indian attire, performing a cultural dance, temple background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p4.png",
+    "Output Image": "outputs/output_3.png",
+    "Image URL": "images/9710605f-8e5d-4811-8e32-da4b2e9c2d21.png"
+  },
+  {
+    "Prompt ID": 4,
+    "Prompt": "cinematic photo Instagram photo of a woman img in traditional North Eastern attire, smiling, vibrant colors, natural background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p10.png",
+    "Output Image": "outputs/output_4.png",
+    "Image URL": "images/d8926800-43b4-4d59-92f3-d78d632c8bea.png"
+  },
+  {
+    "Prompt ID": 5,
+    "Prompt": "cinematic photo Instagram photo of a man img in traditional Marathi attire, wearing a Pheta, vibrant festival setting. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p1.png",
+    "Output Image": "outputs/output_5.png",
+    "Image URL": "images/5581b06f-75be-434a-97c0-46a499c117ac.png"
+  },
+  {
+    "Prompt ID": 6,
+    "Prompt": "cinematic photo Instagram photo of a woman img in traditional Rajasthani attire, wearing a ghagra and odhni, desert backdrop. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p7.png",
+    "Output Image": "outputs/output_6.png",
+    "Image URL": "images/9b7f970a-a4dd-4fe7-bc43-cfdd5d6b8348.png"
+  },
+  {
+    "Prompt ID": 7,
+    "Prompt": "cinematic photo Instagram photo of a man img in traditional Punjabi attire, holding a dhol, joyful expression, farm background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p3.png",
+    "Output Image": "outputs/output_7.png",
+    "Image URL": "images/e297f9da-b69d-460b-8e54-533fc1f84e0b.png"
+  },
+  {
+    "Prompt ID": 8,
+    "Prompt": "cinematic photo Instagram photo of a woman img in traditional Kashmiri attire, wearing a pheran and dejhor, snowy landscape. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p9.png",
+    "Output Image": "outputs/output_8.png",
+    "Image URL": "images/8ca73c5a-4a9e-4519-8029-0df8046e37e6.png"
+  },
+  {
+    "Prompt ID": 9,
+    "Prompt": "cinematic photo Instagram photo of a man img in traditional Tamil attire, holding a lamp, temple backdrop. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p5.png",
+    "Output Image": "outputs/output_9.png",
+    "Image URL": "images/5db1a5f9-5ba7-4246-8daa-53d33bf992b1.png"
+  },
+  {
+    "Prompt ID": 10,
+    "Prompt": "cinematic photo Instagram photo of a Sikh man img with a turban, holding a kirpan, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p1.png",
+    "Output Image": "outputs/output_10.png",
+    "Image URL": "images/ed09bc76-8fd1-4f17-81d9-b3f0ee468e9d.png"
+  },
+  {
+    "Prompt ID": 11,
+    "Prompt": "cinematic photo Instagram photo of a saint img as Guru Nanak, peaceful expression, meditating under a tree, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p2.png",
+    "Output Image": "outputs/output_11.png",
+    "Image URL": "images/9f6a6b2b-82ea-4c3d-9e0c-1fffb60262dd.png"
+  },
+  {
+    "Prompt ID": 12,
+    "Prompt": "cinematic photo Instagram photo of a Sikh woman img in traditional attire, in front of the Golden Temple, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p8.png",
+    "Output Image": "outputs/output_12.png",
+    "Image URL": "images/659c32fd-a52e-4f00-b4a7-7b20fc67020e.png"
+  },
+  {
+    "Prompt ID": 13,
+    "Prompt": "cinematic photo Instagram photo of a Sikh warrior img on horseback, traditional armor, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p4.png",
+    "Output Image": "outputs/output_13.png",
+    "Image URL": "images/b01878e1-2afb-4a71-88f2-4cb75ade0762.png"
+  },
+  {
+    "Prompt ID": 14,
+    "Prompt": "cinematic photo Instagram photo of a Sikh man img in a traditional turban, praying at the Gurudwara, serene expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p5.png",
+    "Output Image": "outputs/output_14.png",
+    "Image URL": "images/d6b5acaf-ab02-4677-9feb-08c4dcb543f1.png"
+  },
+  {
+    "Prompt ID": 15,
+    "Prompt": "cinematic photo Instagram photo of a Sikh woman img, wearing a traditional Patiala suit, joyful expression, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p6.png",
+    "Output Image": "outputs/output_15.png",
+    "Image URL": "images/ae5abfac-3073-42c3-9727-c62970101a17.png"
+  },
+  {
+    "Prompt ID": 16,
+    "Prompt": "cinematic photo Instagram photo of a Sikh child img, in traditional attire, running joyfully in a field, sunny day. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p2.png",
+    "Output Image": "outputs/output_16.png",
+    "Image URL": "images/75827ac1-92b7-47fb-8a85-83bd97cead31.png"
+  },
+  {
+    "Prompt ID": 17,
+    "Prompt": "cinematic photo Instagram photo of a Sikh elder img, in a white turban, sitting peacefully in a garden, wise expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p3.png",
+    "Output Image": "outputs/output_17.png",
+    "Image URL": "images/4e032317-723f-4094-9e2c-7cc65207fd51.png"
+  },
+  {
+    "Prompt ID": 18,
+    "Prompt": "cinematic photo Instagram photo of a Sikh couple img, both in traditional attire, sharing a laugh, colorful setting. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p1.png",
+    "Output Image": "outputs/output_18.png",
+    "Image URL": "images/656a1213-1ddf-479c-b0e0-02ec47cb8d61.png"
+  },
+  {
+    "Prompt ID": 19,
+    "Prompt": "cinematic photo Instagram photo of a Sikh family img, in traditional attire, celebrating a festival, joyful expressions, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p1.png",
+    "Output Image": "outputs/output_19.png",
+    "Image URL": "images/3c615f13-ffe3-4afa-b30a-89e390cbb5a6.png"
+  },
+  {
+    "Prompt ID": 20,
+    "Prompt": "cinematic photo Instagram photo of a man img as a Sufi saint, in a dargah, traditional attire, prayer cap, natural skin, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "Negative Prompt": "nudity, scantily clad, suggestive, provocative, disrespectful, cartoonish, deformed, ugly, drawing, painting, crayon, sketch, graphite, noisy, blurry, soft",
+    "Reference Image": "p1.png",
+    "Output Image": "outputs/output_20.png",
+    "Image URL": "images/7c1455b9-4bb9-4cd9-bf3d-f69f0315d946.png"
+  }
+]
