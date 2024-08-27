@@ -1,19 +1,25 @@
 {
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgresql://postgres:password@127.0.0.1:5432/Avatar-App?schema=public"
+    }
+  },
+  "scripts": {
+    "build": "prisma generate && next build"
+  },
   "rewrites": [
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
     },
     {
+      "source": "/signIn",
+      "destination": "https://smart-grader-app-ts.vercel.app/signIn"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/signIn",
-      "destination": "https://smart-grader-app-ts.vercel.app/signIn",
-      "permanent": true
-    }
   ]
 }
+
