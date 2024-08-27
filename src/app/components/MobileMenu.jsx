@@ -1,18 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+
 import { MdArrowOutward } from "react-icons/md";
-import { useRouter } from "next/navigation"; // Correct import
+
 import Demo from "../components/Demo";
 
 const MobileMenu = () => {
-  const router = useRouter(); // Correct usage of useRouter
-  const [demo, setDemo] = useState(false);
 
-  const handleClose = () => {
-    setDemo(false);
-  };
 
   return (
     <>
@@ -21,26 +16,7 @@ const MobileMenu = () => {
         <div className="flex flex-col max-h-[calc(100vh-110px)]">
           <ul className="flex-grow flex flex-col py-5 mb-4 space-y-2 overflow-y-auto">
             <li className="flex justify-center">
-              <span
-                onClick={() => router.push("/")}
-                className="text-gray-900 hover:text-blue-700 font-spline transition duration-300 cursor-pointer"
-              >
-                Home
-              </span>
-            </li>
-            <li className="flex justify-center">
-              <Link href="https://chatgpt.com/g/g-QcBTxz9bF-smartgrader-assistant">
-                <span className="text-gray-900 hover:text-blue-700 font-spline transition duration-300">
-                  Chat with our docs
-                </span>
-              </Link>
-            </li>
-            <li className="flex justify-center">
-              <Link href="https://discord.com/invite/mQeEsStC">
-                <span className="text-gray-900 hover:text-blue-700 transition font-spline duration-300">
-                  Join our Discord
-                </span>
-              </Link>
+             
             </li>
             <li className="flex justify-center">
               <span
