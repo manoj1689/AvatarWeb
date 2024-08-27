@@ -1,5 +1,3 @@
-// src/components/EffectsSelector.tsx
-
 "use client";
 
 export default function EffectsSelector({ selectedEffect, onEffectChange }: { selectedEffect: string; onEffectChange: (effect: string) => void }) {

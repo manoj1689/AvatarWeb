@@ -1,3 +1,4 @@
+"use client";
 // src/app/sample-effect-selection/page.tsx
 import Header from '../../components/Behrupiya/Header';
 import Footer from '../../components/Behrupiya/Footer';

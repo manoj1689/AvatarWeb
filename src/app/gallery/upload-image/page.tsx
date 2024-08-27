@@ -1,3 +1,4 @@
+"use client";
 // src/app/upload-image/page.tsx
 import Header from '../../components/Behrupiya/Header';
 import Footer from '../../components/Behrupiya/Footer';

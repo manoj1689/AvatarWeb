@@ -1,5 +1,3 @@
-// src/components/GenerateButton.tsx
-
 "use client";
 
 import axios from "axios";
