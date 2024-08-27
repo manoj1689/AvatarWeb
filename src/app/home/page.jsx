@@ -1,3 +1,4 @@
+'use client'
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Pricing from "../components/Pricing";
@@ -19,8 +20,8 @@ export default function HomePage() {
         <Features />
         <PersonaSection />
         <Pricing />
-        <Chatbot />
-        <IntroVideo />
+        <Chatbot /> 
+                <IntroVideo />
 
         <Partners />
 
