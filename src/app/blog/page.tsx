@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Data from "../../../blogs.json";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Chatbot from "../components/Chatbot/Chatbot";
+//import Chatbot from "../components/Chatbot/Chatbot";
 function Blog() {
   const [expandedBlogs, setExpandedBlogs] = useState<number[]>([]);
 
@@ -23,7 +23,7 @@ function Blog() {
       <div className="container mt-32 md:mt-20 mx-auto">
        
         <section className="bg-white">
-       <Chatbot/> 
+       {/* <Chatbot/>  */}
           <motion.div
             className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6"
             initial={{ opacity: 0, y: 50 }}

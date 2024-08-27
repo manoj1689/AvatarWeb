@@ -10,7 +10,7 @@ import PersonaSection from "../components/PersonaSection";
 import Navbar from "../components/Navbar";
 import IntroVideo from "../components/IntroVideo";
 
-import Chatbot from "../components/Chatbot/Chatbot";
+//import Chatbot from "../components/Chatbot/Chatbot";
 export default function HomePage() {
   return (
     <div className="w-full bg-[#F6F9FC]">
@@ -20,7 +20,7 @@ export default function HomePage() {
         <Features />
         <PersonaSection />
         <Pricing />
-        <Chatbot /> 
+        {/* <Chatbot />  */}
                 <IntroVideo />
 
         <Partners />
