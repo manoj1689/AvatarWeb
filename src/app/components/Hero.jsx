@@ -48,14 +48,38 @@ const Hero = () => {
             Gain confidence and improve performance with precise feedback. Our platform leverages advanced technology to enhance interview and evaluation processes. Prepare smarter and excel with our AI-powered assessment solutions.
           </motion.p>
           <div className="flex flex-col items-start w-full mt-6">
-          <Link href='/First_App'>
+          {/* <Link href='/First_App'>
+                  <span
+                    className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
+                  >
+                    Get Started with AvatarApp <FaArrowRight className="ml-4" />
+                  </span>
+                </Link> */}
+            {redirectUrl ? (
+              <>
+                {/* Message above the button */}
+                <p className="text-green-500 font-medium mb-4">
+                  You are signed in! Click below to get started with AvatarApp.
+                </p>
+                <Link href={redirectUrl}>
                   <span
                     className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
                   >
                     Get Started with AvatarApp <FaArrowRight className="ml-4" />
                   </span>
                 </Link>
-     
+              </>
+            ) : (
+              <>
+                {/* Message above the button */}
+                <p className="text-red-500 font-medium mb-4">
+                  Please sign in to continue.
+                </p>
+                <span className="bg-gray-400 flex text-white px-4 sm:px-6 py-3 font-spline text-md rounded items-center cursor-not-allowed">
+                  <span>Get Started with AvatarApp</span> <span><FaArrowRight className="ml-4" /></span>
+                </span>
+              </>
+            )}
           </div>
         </div>
         <motion.div
@@ -74,28 +98,3 @@ const Hero = () => {
 export default Hero;
 
 
-// {redirectUrl ? (
-//   <>
-//     {/* Message above the button */}
-//     <p className="text-green-500 font-medium mb-4">
-//       You are signed in! Click below to get started with AvatarApp.
-//     </p>
-//     <Link href={redirectUrl}>
-//       <span
-//         className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
-//       >
-//         Get Started with AvatarApp <FaArrowRight className="ml-4" />
-//       </span>
-//     </Link>
-//   </>
-// ) : (
-//   <>
-//     {/* Message above the button */}
-//     <p className="text-red-500 font-medium mb-4">
-//       Please sign in to continue.
-//     </p>
-//     <span className="bg-gray-400 flex text-white px-4 sm:px-6 py-3 font-spline text-md rounded items-center cursor-not-allowed">
-//       <span>Get Started with AvatarApp</span> <span><FaArrowRight className="ml-4" /></span>
-//     </span>
-//   </>
-// )}
