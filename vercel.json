@@ -1,9 +1,4 @@
 {
-  "build": {
-    "env": {
-      "SQLALCHEMY_DATABASE_URL": "postgresql://postgres:PostgresQl@learningapp.ch68meauc40x.ap-south-1.rds.amazonaws.com:5432/ldb_v1"
-    }
-  },
 
   "rewrites": [
     
