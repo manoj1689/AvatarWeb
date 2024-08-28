@@ -48,13 +48,7 @@ const Hero = () => {
             Gain confidence and improve performance with precise feedback. Our platform leverages advanced technology to enhance interview and evaluation processes. Prepare smarter and excel with our AI-powered assessment solutions.
           </motion.p>
           <div className="flex flex-col items-start w-full mt-6">
-          {/* <Link href='/First_App'>
-                  <span
-                    className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
-                  >
-                    Get Started with AvatarApp <FaArrowRight className="ml-4" />
-                  </span>
-                </Link> */}
+         
             {redirectUrl ? (
               <>
                 {/* Message above the button */}
@@ -68,6 +62,7 @@ const Hero = () => {
                     Get Started with AvatarApp <FaArrowRight className="ml-4" />
                   </span>
                 </Link>
+                
               </>
             ) : (
               <>
@@ -80,6 +75,15 @@ const Hero = () => {
                 </span>
               </>
             )}
+          </div>
+          <div>
+          <Link href='/Second_App'>
+                  <span
+                    className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
+                  >
+                    Get Started with ImageGenerater <FaArrowRight className="ml-4" />
+                  </span>
+                </Link>
           </div>
         </div>
         <motion.div
