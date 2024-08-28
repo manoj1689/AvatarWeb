@@ -78,12 +78,13 @@ const Hero = () => {
           </div>
           <div>
           <Link href='/Second_App'>
-                  <span
-                    className="bg-[#01AFF4] text-white px-4 sm:px-6 py-3 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer"
-                  >
-                    Get Started with ImageGenerater <FaArrowRight className="ml-4" />
-                  </span>
-                </Link>
+  <span
+    className="bg-[#01AFF4] text-white mt-4 flex-nowrap px-4 sm:px-6 py-3 w-1/2 font-spline text-md rounded hover:bg-blue-500 transition duration-300 flex items-center cursor-pointer whitespace-nowrap"
+  >
+    Get Started with ImageGenerater <FaArrowRight className="ml-4" />
+  </span>
+</Link>
+
           </div>
         </div>
         <motion.div
