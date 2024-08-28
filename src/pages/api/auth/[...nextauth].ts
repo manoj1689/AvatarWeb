@@ -1,6 +1,6 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { PrismaAdapter } from "@next-auth/prisma-adapter"; // Update the path if necessary
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -16,14 +16,14 @@ export const authOptions: AuthOptions = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   session: {
-    strategy: "jwt", // or "database" if you prefer storing sessions in the database
+    strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: {
-    error: '/auth/This error link working', // Custom error page
+    error: '/auth/error', // Custom error page
   },
   callbacks: {
-    async signIn({ user }) {
+    async signIn({ user, account }) {
       if (!user.email) {
         throw new Error("User email is required");
       }
@@ -31,15 +31,48 @@ export const authOptions: AuthOptions = {
       // Check if the user exists in the database
       const existingUser = await prisma.user.findUnique({
         where: { email: user.email as string },
+        include: { accounts: true }, // Include the associated accounts
       });
 
-      // If the user does not exist, create a new user with initial credits
-      if (!existingUser) {
+      if (existingUser) {
+        // Check if the account's provider is different from any of the existing user's linked accounts
+        const existingAccount = existingUser.accounts.find(
+          acc => acc.provider === account?.provider
+        );
+
+        if (!existingAccount && account) {
+          // Link the OAuth account to the existing user
+          await prisma.account.create({
+            data: {
+              userId: existingUser.id,
+              provider: account.provider,
+              providerAccountId: account.providerAccountId,
+              access_token: account.access_token ?? undefined,
+              expires_at: account.expires_at ?? undefined,
+              scope: account.scope ?? undefined,
+              token_type: account.token_type ?? undefined,
+              id_token: account.id_token ?? undefined,
+            },
+          });
+        }
+      } else {
+        // If the user does not exist, create a new user with initial credits
         await prisma.user.create({
           data: {
             email: user.email as string,
             name: user.name,
             credits: 10, // Initial credits for new users
+            accounts: {
+              create: {
+                provider: account!.provider,
+                providerAccountId: account!.providerAccountId,
+                access_token: account!.access_token ?? undefined,
+                expires_at: account!.expires_at ?? undefined,
+                scope: account!.scope ?? undefined,
+                token_type: account!.token_type ?? undefined,
+                id_token: account!.id_token ?? undefined,
+              },
+            },
           },
         });
       }
