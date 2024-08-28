@@ -17,7 +17,7 @@ generator client {
 
 model User {
   id             Int       @id @default(autoincrement())
-  email          String    @unique
+  email          String    @unique  @db.VarChar(255)
   name           String?
   password       String?
   image          String?   // Add this field if you store user profile images
