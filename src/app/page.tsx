@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
   return (
     <>
-       <h1>Welcome to My Website</h1>
+       <h1 className="mt-20">Welcome to My Website</h1>
       {/* Google AdSense Ad Slot */}
       <ins
         className="adsbygoogle"
