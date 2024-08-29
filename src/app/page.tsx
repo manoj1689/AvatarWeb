@@ -1,7 +1,7 @@
 'use client'
 import HomePage from "./home/page";
 import { useEffect } from "react";
-import Script from "next/script";
+
 
 export default function Home() {
   useEffect(() => {
@@ -22,18 +22,7 @@ export default function Home() {
     <>
       
       {/* Google AdSense script */}
-      <Script
-        id="adsense-script"
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        async
-        crossOrigin="anonymous"
-        onLoad={() => {
-          // Initialize ads when the script loads
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        }}
-        onError={(e) => console.error('Adsense script failed to load', e)}
-      />
+   
       <ins className="adsbygoogle"
            style={{ display: "block" ,backgroundColor:'orange' }}
            data-ad-client="ca-pub-5586423585632688"  // Replace with your AdSense Client ID
