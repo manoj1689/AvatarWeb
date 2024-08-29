@@ -22,7 +22,7 @@ export default function RootLayout({
       <head>
         <Script
           id="adsense-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           async
           crossOrigin="anonymous"
