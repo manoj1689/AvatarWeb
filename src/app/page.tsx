@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <HomePage />
+    
       {/* Google AdSense script */}
       <Script
         id="adsense-script"
@@ -35,6 +35,7 @@ export default function Home() {
            data-ad-slot="5043688208"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
+             <HomePage />
     </>
   );
 }
