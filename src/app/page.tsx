@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <HomePage />
+      
       {/* Google AdSense script */}
       <Script
         id="adsense-script"
@@ -34,16 +34,15 @@ export default function Home() {
         }}
         onError={(e) => console.error('Adsense script failed to load', e)}
       />
-      <div className="flex bg-orange-400 w-full">
       <ins className="adsbygoogle"
-           style={{ display: "block" }}
+           style={{ display: "block" ,backgroundColor:'orange' }}
            data-ad-client="ca-pub-5586423585632688"  // Replace with your AdSense Client ID
            data-ad-slot="5043688208"  // Replace with your AdSense Slot ID
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      </div>
-
+           <HomePage />
     </>
+    
   );
 }
 
