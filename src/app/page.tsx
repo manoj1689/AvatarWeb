@@ -1,13 +1,19 @@
+'use client'
+// pages/index.js or pages/index.tsx
 import HomePage from "./home/page";
-//import HomePage from '../app/components/Behrupiya/Home/page';
-
 export default function Home() {
-  
+ 
   return (
-    <>
-     <HomePage/>
-  
-    </>
 
+    <>
+      <HomePage />
+      {/* Your ad code goes here */}
+      <ins className="adsbygoogle"
+           style={{ display: "block" }}
+           data-ad-client="ca-pub-5586423585632688"
+           data-ad-slot="5043688208"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </>
   );
 }

@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Header from "../../Behrupiya/Header";
-import Footer from "../../Behrupiya/Footer";
+import Header from "../Header";
+import Footer from "../Footer";
+import Image from "next/image";
+import { ClipLoader } from "react-spinners"; // Add this import for the spinner
 
 interface Prompt {
   id: string;
@@ -12,8 +13,12 @@ interface Prompt {
   alt: string;
 }
 
+interface Category {
+  name: string;
+  prompts: Prompt[];
+}
+
 export default function HomePage() {
-  const { data: session } = useSession();
   const router = useRouter();
   const [uploadedImages, setUploadedImages] = useState<File[]>([]);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
@@ -21,7 +26,8 @@ export default function HomePage() {
     width: number;
     height: number;
   } | null>(null);
-  const [prompts, setPrompts] = useState<Prompt[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedPrompt, setSelectedPrompt] = useState<string | null>(null);
   const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
@@ -31,25 +37,49 @@ export default function HomePage() {
     const fetchData = async () => {
       const response = await fetch("/data.json");
       const data = await response.json();
-      const images: Prompt[] = data.map((item: any) => ({
-        id: item["Prompt ID"],
-        src: item["Image URL"],
-        alt: item["Prompt"],
+
+      const categoryMap: Record<string, Prompt[]> = {};
+
+      data.forEach((item: any) => {
+        Object.keys(item).forEach((category) => {
+          if (!categoryMap[category]) {
+            categoryMap[category] = [];
+          }
+          if (item[category].length > 0) {
+            item[category].forEach((imgData: any) => {
+              categoryMap[category].push({
+                id: imgData["Prompt ID"],
+                src: imgData["Image URL"].startsWith("/")
+                  ? imgData["Image URL"]
+                  : `/${imgData["Image URL"]}`,
+                alt: imgData["Prompt"],
+              });
+            });
+          }
+        });
+      });
+
+      const categoryList = Object.keys(categoryMap).map((name) => ({
+        name,
+        prompts: categoryMap[name],
       }));
-      setPrompts(images);
-      const map = new Map(images.map((p) => [p.id, p.alt]));
-      setPromptMap(map);
+
+      setCategories(categoryList);
+      setPromptMap(
+        new Map(
+          categoryList.flatMap((cat) => cat.prompts.map((p) => [p.id, p.alt]))
+        )
+      );
+
+      if (categoryList.some((cat) => cat.name === "Sikh Culture")) {
+        setSelectedCategory("Sikh Culture");
+      }
     };
 
     fetchData();
   }, []);
 
   const handleGenerate = async () => {
-    if (!session) {
-      router.push("/api/auth/signin");
-      return;
-    }
-
     if (uploadedImages.length === 0 || !selectedPrompt) {
       alert("Please upload an image and select a prompt.");
       return;
@@ -80,8 +110,7 @@ export default function HomePage() {
       const result = await response.json();
       setGeneratedImage(result.image_url);
 
-      // Fetch image dimensions
-      const img = new Image();
+      const img = new window.Image();
       img.src = result.image_url;
       img.onload = () => {
         setImageDimensions({ width: img.width, height: img.height });
@@ -109,6 +138,13 @@ export default function HomePage() {
     if (prompt) {
       setSelectedPrompt(prompt);
       setSelectedImageId(id);
+    }
+  };
+
+  const handlePromptChange = (id: string, newPrompt: string) => {
+    setPromptMap((prevMap) => new Map(prevMap.set(id, newPrompt)));
+    if (selectedImageId === id) {
+      setSelectedPrompt(newPrompt);
     }
   };
 
@@ -140,26 +176,62 @@ export default function HomePage() {
             Step Into The Magical Kingdom And Awaken The Wonder!
           </p>
 
-          <div className="grid grid-cols-6 gap-4 mb-8">
-            {prompts.map((prompt) => (
-              <div
-                key={prompt.id}
-                className={`bg-white shadow-lg rounded-lg p-1 cursor-pointer ${
-                  selectedImageId === prompt.id
-                    ? "border-4 border-blue-500"
-                    : ""
-                }`}
-                onClick={() => handleImageSelect(prompt.id)}
-              >
-                <img
-                  src={prompt.src}
-                  alt={prompt.alt}
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-              </div>
-            ))}
+          {/* Categories Buttons */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            {categories.map((category) => {
+              const isClickable =
+                category.name === "Muslim Influences" ||
+                category.name === "Sikh Culture" ||
+                category.name === "Religional Attire";
+
+              return (
+                <button
+                  key={category.name}
+                  className={`px-4 py-2 rounded-lg text-white ${
+                    selectedCategory === category.name
+                      ? "bg-blue-600"
+                      : "bg-gray-600"
+                  } ${isClickable ? "" : "opacity-50 cursor-not-allowed"}`}
+                  onClick={() => {
+                    if (isClickable) {
+                      setSelectedCategory(category.name);
+                    }
+                  }}
+                  disabled={!isClickable}
+                >
+                  {category.name}
+                </button>
+              );
+            })}
           </div>
 
+          {/* Image Display */}
+          <div className="grid grid-cols-6 gap-4 mb-8">
+            {selectedCategory &&
+              categories
+                .find((cat) => cat.name === selectedCategory)
+                ?.prompts.map((prompt) => (
+                  <div
+                    key={prompt.id}
+                    className={`bg-white shadow-lg rounded-lg p-1 cursor-pointer ${
+                      selectedImageId === prompt.id
+                        ? "border-4 border-blue-500"
+                        : ""
+                    }`}
+                    onClick={() => handleImageSelect(prompt.id)}
+                  >
+                    <Image
+                      src={prompt.src}
+                      alt={prompt.alt}
+                      width={200}
+                      height={200}
+                      className="w-full h-auto object-cover rounded-lg"
+                    />
+                  </div>
+                ))}
+          </div>
+
+          {/* Image Upload and Prompt Selection */}
           <div className="flex justify-between w-full max-w-6xl mx-auto mb-8">
             <div className="w-1/2 bg-white shadow-lg rounded-lg p-6 mr-4">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">
@@ -182,107 +254,100 @@ export default function HomePage() {
                       key={index}
                       className="relative w-1/3 h-32 overflow-hidden bg-gray-200 rounded-lg shadow-md"
                     >
-                      <img
+                      <Image
                         src={URL.createObjectURL(file)}
                         alt={`Uploaded ${index}`}
-                        className="object-cover h-full w-full"
+                        width={100} // Set an appropriate width
+                        height={100} // Set an appropriate height
+                        className="object-cover w-full h-full"
                       />
                       <button
-                        className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full"
                         onClick={() => handleImageRemove(index)}
+                        className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full"
                       >
-                        &times;
+                        X
                       </button>
                     </div>
                   ))
                 ) : (
-                  <label className="flex flex-col items-center justify-center w-full h-full text-center">
-                    <svg
-                      className="w-12 h-12 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M7 16l4 4 4-4m4-4l-4-4-4 4m-4 4H4v-6h4v6zm8-6v6h4v-6h-4zM9 10l-4 4h3v4h2v-4h3l-4-4zm12-2a6 6 0 00-6 6v2a6 6 0 0012 0v-2a6 6 0 00-6-6zm-2 6a2 2 0 01-4 0v-2a2 2 0 014 0v2z"
-                      />
-                    </svg>
-                    <span className="mt-2 text-gray-600">
-                      Drag and drop an image here, or click to select
-                    </span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      multiple
-                      onChange={handleImageUpload}
-                      className="hidden"
-                    />
-                  </label>
+                  <p className="text-gray-400">
+                    Drag and drop images here or click to select files.
+                  </p>
                 )}
               </div>
+              <input
+                type="file"
+                multiple
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="mt-4"
+              />
             </div>
 
+            {/* Prompt Editing */}
             <div className="w-1/2 bg-white shadow-lg rounded-lg p-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Generated Image
+                Selected Image Prompt:
               </h2>
-              {isGenerating ? (
-                <div className="flex flex-col items-center justify-center h-64">
-                  <svg
-                    className="animate-spin h-12 w-12 text-blue-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 0 0"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 4v8l4 4M4 12a8 8 0 0116 0"
-                    />
-                  </svg>
-                  <span className="mt-4 text-gray-600">Generating...</span>
-                </div>
-              ) : generatedImage ? (
-                <div className="relative">
-                  <img
-                    src={generatedImage}
-                    alt="Generated"
-                    className="object-cover rounded-lg"
-                    style={{
-                      maxWidth: "100%",
-                      maxHeight: "400px",
-                      width: "auto",
-                      height: "auto",
-                    }}
-                  />
-                  <button
-                    onClick={handleDownload}
-                    className="mt-4 bg-blue-600 text-white p-2 rounded-lg"
-                  >
-                    Download Image
-                  </button>
-                </div>
-              ) : (
-                <div className="h-64 flex items-center justify-center text-gray-600">
-                  No image generated yet.
-                </div>
-              )}
+              <div>
+                <textarea
+                  value={selectedPrompt || ""}
+                  onChange={(e) =>
+                    selectedImageId &&
+                    handlePromptChange(selectedImageId, e.target.value)
+                  }
+                  rows={5}
+                  className="w-full p-2 border border-gray-300 rounded-lg resize-none"
+                  placeholder="Edit the prompt here..."
+                  disabled={!selectedPrompt}
+                />
+              </div>
+              <p className="text-gray-500 text-sm mt-2">
+                Tip: Modify the prompt for custom output results
+              </p>
             </div>
           </div>
 
+          {/* Generate Button */}
           <button
             onClick={handleGenerate}
-            disabled={isButtonDisabled}
+            disabled={isButtonDisabled || isGenerating}
             className={buttonClassName}
           >
             {isGenerating ? "Generating..." : "Generate Image"}
           </button>
+
+          {/* Loading Spinner and Text */}
+          {isGenerating && (
+            <div className="flex flex-col items-center mt-4">
+              <ClipLoader color="#3498db" size={50} /> {/* Loading spinner */}
+              <p className="text-gray-500 mt-2">Your image is generating...</p>
+            </div>
+          )}
+
+          {/* Generated Image Display */}
+          {generatedImage && (
+            <div className="mt-8 bg-white shadow-lg rounded-lg p-6">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                Generated Image:
+              </h2>
+              <div className="flex justify-center">
+                <Image
+                  src={generatedImage}
+                  alt="Generated Image"
+                  width={imageDimensions?.width || 0}
+                  height={imageDimensions?.height || 0}
+                  className="rounded-lg"
+                />
+              </div>
+              <button
+                onClick={handleDownload}
+                className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Download Image
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <Footer />
