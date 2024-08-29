@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
      
       <head>
-<AdSence pId="ca-pub-5586423585632688"/>
+     <AdSence pId="ca-pub-5586423585632688"/>
       </head>
       <body className={`bg-gray-100 ${inter.className}`}>
         {/* Google AdSense script */}

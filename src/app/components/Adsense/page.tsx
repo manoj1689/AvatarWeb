@@ -1,5 +1,6 @@
 import React from "react";
 import Script from "next/script";
+import "../../globals.css"
 
 type AdsenseType = {
     pId:string
