@@ -1,10 +1,8 @@
-// src/app/layout.tsx
 import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ClientWrapper from "../app/components/Behrupiya/ClientWrapper";
-import Script from 'next/script';
-import AdSence from "./components/Adsense/page";
+import AdSence from "../app/components/Adsense/page"; // Adjust the import path to match your project structure
 
 // Import and configure the Inter font from Google Fonts
 const inter = Inter({ subsets: ["latin"] });
@@ -19,17 +17,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: { children: React.ReactNode }) {
-
   return (
     <html lang="en">
-     
       <head>
-      <AdSence />
-
+        {/* Load Google AdSense script */}
+        <AdSence pId="ca-pub-5586423585632688" />
       </head>
       <body className={`bg-gray-100 ${inter.className}`}>
-        {/* Google AdSense script */}
-       
         <ClientWrapper>
           {children}
         </ClientWrapper>
