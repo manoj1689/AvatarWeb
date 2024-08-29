@@ -34,7 +34,7 @@ export default function Home() {
         }}
         onError={(e) => console.error('Adsense script failed to load', e)}
       />
-      <div className="flex bg-orange-400">
+      <div className="flex bg-orange-400 w-full">
       <ins className="adsbygoogle"
            style={{ display: "block" }}
            data-ad-client="ca-pub-5586423585632688"  // Replace with your AdSense Client ID
