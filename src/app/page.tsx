@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from "react";
 import HomePage from "./home/page";
 //import HomePage from '../app/components/Behrupiya/Home/page';
