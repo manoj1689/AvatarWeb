@@ -12,8 +12,10 @@ export default function Home() {
     }
   }, []);
   return (
-    <>
-       <h1 className="flex mt-40">Welcome to My Website</h1>
+    <><div className="flex mt-40"> 
+ <h1 >Welcome to My Website</h1>
+    </div>
+      
       {/* Google AdSense Ad Slot */}
       <ins
         className="adsbygoogle"
