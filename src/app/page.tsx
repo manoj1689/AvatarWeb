@@ -5,17 +5,22 @@ import Script from "next/script";
 
 export default function Home() {
   useEffect(() => {
-    try {
-      // Ensure Google Ads is initialized after script is loaded
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error('Adsbygoogle push error:', e);
-    }
+    // Initialize Google Ads after the script is loaded
+    const initAds = () => {
+      if (window.adsbygoogle) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }
+    };
+
+    // Set up a timeout to ensure the script has loaded
+    const timer = setTimeout(initAds, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-    
+      <HomePage />
       {/* Google AdSense script */}
       <Script
         id="adsense-script"
@@ -24,18 +29,21 @@ export default function Home() {
         async
         crossOrigin="anonymous"
         onLoad={() => {
-          // Initialize Google Ads
+          // Initialize ads when the script loads
           (window.adsbygoogle = window.adsbygoogle || []).push({});
         }}
         onError={(e) => console.error('Adsense script failed to load', e)}
       />
+      <div className="flex bg-orange-400">
       <ins className="adsbygoogle"
            style={{ display: "block" }}
-           data-ad-client="ca-pub-5586423585632688"
-           data-ad-slot="5043688208"
+           data-ad-client="ca-pub-5586423585632688"  // Replace with your AdSense Client ID
+           data-ad-slot="5043688208"  // Replace with your AdSense Slot ID
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-             <HomePage />
+      </div>
+
     </>
   );
 }
+
