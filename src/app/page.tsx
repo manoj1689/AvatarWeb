@@ -1,15 +1,34 @@
 'use client'
-// pages/index.js or pages/index.tsx
 import HomePage from "./home/page";
-import AdsenseScript from "./components/AdsenseScript/page";
-export default function Home() {
- 
-  return (
+import { useEffect } from "react";
+import Script from "next/script";
 
+export default function Home() {
+  useEffect(() => {
+    try {
+      // Ensure Google Ads is initialized after script is loaded
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('Adsbygoogle push error:', e);
+    }
+  }, []);
+
+  return (
     <>
       <HomePage />
-      <AdsenseScript/>
-      {/* Your ad code goes here */}
+      {/* Google AdSense script */}
+      <Script
+        id="adsense-script"
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        async
+        crossOrigin="anonymous"
+        onLoad={() => {
+          // Initialize Google Ads
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }}
+        onError={(e) => console.error('Adsense script failed to load', e)}
+      />
       <ins className="adsbygoogle"
            style={{ display: "block" }}
            data-ad-client="ca-pub-5586423585632688"
