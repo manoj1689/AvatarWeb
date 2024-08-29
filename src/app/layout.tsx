@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ClientWrapper from "../app/components/Behrupiya/ClientWrapper";
-import AdSence from "../app/components/Adsense/page"; // Adjust the import path to match your project structure
 import Script from "next/script";
 
 // Import and configure the Inter font from Google Fonts
