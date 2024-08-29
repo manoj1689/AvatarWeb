@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ClientWrapper from "../app/components/Behrupiya/ClientWrapper";
 import Script from 'next/script';
+import AdSence from "./components/Adsense/page";
 
 // Import and configure the Inter font from Google Fonts
 const inter = Inter({ subsets: ["latin"] });
@@ -23,14 +24,7 @@ export default function RootLayout({
     <html lang="en">
      
       <head>
-  <link
-    rel="preload"
-    href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    as="script"
-    crossOrigin="anonymous"  // Ensure this matches your script request
-  />
-
-
+<AdSence pId="ca-pub-5586423585632688"/>
       </head>
       <body className={`bg-gray-100 ${inter.className}`}>
         {/* Google AdSense script */}
