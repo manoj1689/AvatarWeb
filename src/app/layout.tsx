@@ -21,8 +21,16 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+     
       <head>
-        {/* Metadata is automatically injected by Next.js */}
+  <link
+    rel="preload"
+    href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    as="script"
+    crossOrigin="anonymous"  // Ensure this matches your script request
+  />
+
+
       </head>
       <body className={`bg-gray-100 ${inter.className}`}>
         {/* Google AdSense script */}
