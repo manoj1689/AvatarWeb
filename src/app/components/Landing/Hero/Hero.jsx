@@ -133,7 +133,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-gray-300 text-xl w-1/2 mx-auto font-spline leading-6 text-center mb-8"
           >
-            Create AI Art and turn your imaginations into reality with Imagine's AI Art Generator and produce stunning visuals to cover up your artistic thoughts.
+            Create AI Art and turn your imaginations into reality with Imagine&apos;s AI Art Generator and produce stunning visuals to cover up your artistic thoughts.
           </motion.div>
 
           {/* Create For Free Button for small screens */}
