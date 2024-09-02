@@ -26,7 +26,7 @@ export default function Home() {
       </video>
 
       {/* Content */}
-      <div > 
+      <div className="relative z-10 "> 
         <HomePage />
       </div>
       
