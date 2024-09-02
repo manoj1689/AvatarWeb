@@ -1,5 +1,6 @@
 'use client'
-import Hero from "../components/Hero";
+import Hero from "../components/Landing/Hero/Hero";
+import AITools from "../components/Landing/AITools/AITools"
 import Features from "../components/Features";
 import Pricing from "../components/Pricing";
 import Partners from "../components/Partners";
@@ -13,10 +14,12 @@ import IntroVideo from "../components/IntroVideo";
 //import Chatbot from "../components/Chatbot/Chatbot";
 export default function HomePage() {
   return (
-    <div className="w-full bg-[#F6F9FC]">
+    <div className="w-full h-full ">
 <Navbar/>
-      <div className="container mx-auto mt-20 ">
-        <Hero />
+<Hero />
+<AITools/>
+      <div  >
+      
         <Features />
         <PersonaSection />
         <Pricing />

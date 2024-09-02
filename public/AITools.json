@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "AI Avatar",
+    "description": "Create personalized avatars using cutting-edge AI technology that captures and reflects your unique style and personality. Whether you're looking to create a professional avatar for your online presence or a fun, creative character for social media, our AI Avatar tool allows you to experiment with different looks and styles. With a wide range of customization options, you can design an avatar that truly represents who you are.",
+    "videoUrl": "video/text-to-img.webm",
+    "buttonText": "Generate Image",
+    "buttonLink": "/First_App"
+  },
+  {
+    "id": 2,
+    "title": "AI Text To Image",
+    "description": "Transform your text prompts into visually stunning images with our advanced AI-powered image generation tool. Whether you're an artist seeking inspiration, a marketer in need of creative visuals, or just someone who loves experimenting with art, this tool provides endless possibilities. Simply enter your text, and watch as AI brings your words to life with vibrant colors and intricate designs. Perfect for creating unique digital artwork, promotional materials, or just for fun.",
+    "videoUrl": "video/realtime-text.webm",
+    "buttonText": "Get Started",
+    "buttonLink": "/Second_App"
+  },
+  {
+    "id": 3,
+    "title": "StoryTeller AI",
+    "description": "Bring your stories to life with AI-powered narration and storytelling assistance. Whether you're a budding writer looking to craft compelling narratives or an experienced author seeking new ways to enhance your storytelling, StoryTeller AI is your perfect companion. With features like voice synthesis, plot suggestions, and character development tips, you can create immersive stories that captivate your audience. Explore endless possibilities in fiction, non-fiction, and everything in between.",
+    "videoUrl": "video/text-to-video.webm",
+    "buttonText": "Discover More",
+    "buttonLink": "https://example.com/storyteller"
+  },
+  {
+    "id": 4,
+    "title": "DesignMaster AI",
+    "description": "Elevate your design projects with AI-driven creativity and smart design suggestions. Whether you're a professional designer working on a big project or a hobbyist looking to improve your skills, DesignMaster AI offers innovative tools that adapt to your needs. From automated design elements to intelligent color palettes and layout recommendations, this tool helps you achieve stunning results with minimal effort. Unlock new levels of creativity and productivity in your design process.",
+    "videoUrl": "video/realtime-canvas.webm",
+    "buttonText": "Explore Features",
+    "buttonLink": "https://example.com/designmaster"
+  },
+  {
+    "id": 5,
+    "title": "MusicMaker AI",
+    "description": "Compose original music tracks with the help of AI, blending genres and styles seamlessly to create your perfect sound. Whether you're a seasoned musician or just starting out, MusicMaker AI provides you with tools to compose, arrange, and mix music like a pro. Explore a variety of instruments, effects, and soundscapes to craft your unique soundtracks. From creating background music for videos to composing full-length tracks, MusicMaker AI is your gateway to endless musical possibilities.",
+    "videoUrl": "video/enhance.webm",
+    "buttonText": "Try Now",
+    "buttonLink": "https://example.com/musicmaker"
+  },
+  {
+    "id": 6,
+    "title": "PhotoEnhance AI",
+    "description": "Enhance your photos with AI-powered filters, adjustments, and creative effects. Whether you're looking to improve the quality of your snapshots or add artistic touches to your images, PhotoEnhance AI provides you with all the tools you need. From basic adjustments like brightness and contrast to advanced features like skin retouching and background removal, this tool makes photo editing accessible to everyone. Transform your ordinary photos into extraordinary works of art with just a few clicks.",
+    "videoUrl": "video/character-consistency.webm",
+    "buttonText": "Enhance Photos",
+    "buttonLink": "https://example.com/photoenhance"
+  }
+]

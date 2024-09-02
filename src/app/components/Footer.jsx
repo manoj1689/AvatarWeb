@@ -1,14 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaFacebookF,
-  FaYoutube,
-  FaInstagram,
-  FaLinkedinIn,
-  FaWindowClose,
-} from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import Link from "next/link";
 
 const Footer = () => {
   const companyEmail = "info@smartgrader.in";
@@ -67,6 +60,12 @@ const Footer = () => {
                     <span className="self-start text-gray-400 font-extralight font-spline">
                       About Us
                     </span>
+                    <Link href="./Privacy&Policy" passHref>
+                    <span className="self-start text-gray-400 font-extralight font-spline">
+                    Privacy & Policy
+                    </span>
+                    </Link>
+                  
                   </div>
                 </div>
                 <div className="flex w-1/2 md:w-full flex-col mb-8">
