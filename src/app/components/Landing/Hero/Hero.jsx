@@ -72,49 +72,49 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative mt-40 overflow-hidden">
-      {/* Parallax background */}
-      <div className="flex flex-col absolute inset-0 z-0 justify-center items-center overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
+      {/* Background Section */}
+      <div className="absolute inset-0 z-0 flex flex-col justify-center items-center">
         <ParallaxText baseVelocity={-5}>
-          <div className="flex my-2">
+          <div className="flex flex-grow my-2">
             {list1Images.map((url, index) => (
               <img
                 key={index}
                 src={url}
                 alt={`list1 image ${index + 1}`}
-                className="w-full h-full object-cover mx-2 rounded-md"
+                className="mx-2 rounded-md flex-grow object-cover"
               />
             ))}
           </div>
         </ParallaxText>
         <ParallaxText baseVelocity={5}>
-          <div className="flex my-2">
+          <div className="flex flex-grow my-2">
             {list2Images.map((url, index) => (
               <img
                 key={index}
                 src={url}
                 alt={`list2 image ${index + 1}`}
-                className="w-full h-full object-cover mx-2 rounded-md"
+                className="mx-2 rounded-md flex-grow object-cover"
               />
             ))}
           </div>
         </ParallaxText>
         <ParallaxText baseVelocity={-4}>
-          <div className="flex my-2">
+          <div className="flex flex-grow my-2">
             {list3Images.map((url, index) => (
               <img
                 key={index}
                 src={url}
                 alt={`list3 image ${index + 1}`}
-                className="w-full h-full object-cover mx-2 rounded-md"
+                className="mx-2 rounded-md flex-grow object-cover"
               />
             ))}
           </div>
         </ParallaxText>
       </div>
 
-      {/* Main content */}
-      <div className="px-4 py-32 flex flex-col w-full max-h-screen bg-black bg-opacity-75 lg:flex-row items-center relative z-10 bg-gradient-opacity">
+      {/* Foreground Section */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-opacity-80 bg-black p-8">
         <div className="container flex flex-col mx-auto justify-center items-center">
           {/* Animated Title */}
           <motion.div
@@ -153,7 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="hidden lg:flex  items-center bg-white p-1 rounded-full border-[6px] border-gray-600 w-3/4 mt-4 lg:mt-0"
+            className="hidden lg:flex items-center bg-white p-1 rounded-full border-[6px] border-gray-600 w-3/4 mt-4 lg:mt-0"
           >
             {/* Input field */}
             <input
@@ -176,6 +176,8 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
 
 
 
