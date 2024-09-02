@@ -1,5 +1,5 @@
-
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect ,useCallback} from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const ToolItem = ({ tool, onVisibilityChange }) => {
@@ -13,9 +13,12 @@ const ToolItem = ({ tool, onVisibilityChange }) => {
   }, [inView, tool.id, onVisibilityChange]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`sticky top-64 overflow-hidden z-10 transition-opacity duration-600 ${inView ? 'opacity-100' : 'opacity-0'} ${inView ? 'translate-y-0' : 'translate-y-10'}`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 10 }}
+      transition={{ duration: 0.6 }}
+      className="sticky top-0 overflow-hidden z-10"
     >
       <div>
         <video
@@ -29,7 +32,7 @@ const ToolItem = ({ tool, onVisibilityChange }) => {
           Your browser does not support the video tag.
         </video>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -38,6 +41,7 @@ const AITools = () => {
   const [toolVisibility, setToolVisibility] = useState(new Map());
   const [AiTools, setAITools] = useState([]);
 
+  // Use useCallback to memoize the handler
   const handleVisibilityChange = useCallback((toolId, isInView) => {
     setToolVisibility(prev => new Map(prev).set(toolId, isInView));
   }, []);
@@ -50,31 +54,39 @@ const AITools = () => {
   }, []);
 
   useEffect(() => {
+    // Determine the most recent visible tool
     const visibleTool = [...toolVisibility.entries()]
       .filter(([_, isInView]) => isInView)
       .pop();
 
+    // Only update state if there's a new visible tool or it has changed
     if (visibleTool && visibleTool[0] !== currentToolId) {
       setCurrentToolId(visibleTool[0]);
     }
-  }, [toolVisibility, currentToolId]);
+  }, [toolVisibility, currentToolId]); // Added currentToolId as a dependency
 
   return (
     <section className='bg-black'>
       <div className="container mx-auto p-8 mt-16">
         {/* Header Section */}
         <div className="text-center my-32">
-          <div
-            className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 text-5xl font-spline font-bold pb-8 text-center transition-opacity duration-1000 opacity-100 transform translate-y-0"
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 text-5xl font-spline font-bold pb-8 text-center"
           >
             Our AI Tools Suite
-          </div>
-          <div
-            className="text-gray-300 text-xl lg:max-w-[40%] mx-auto font-medium font-spline leading-7 text-center mb-8 transition-opacity duration-1000 opacity-100 transform translate-y-0"
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-gray-300 text-xl lg:max-w-[40%] mx-auto font-medium font-spline leading-7 text-center mb-8"
           >
             Revolutionize your creative workflow with ImagineArt AI Tools Suite.
             This suite empowers you with cutting-edge AI technology to generate stunning AI art and captivating videos.
-          </div>
+          </motion.div>
         </div>
         <div className="flex">
           <div className="space-y-8 w-full">
@@ -87,24 +99,42 @@ const AITools = () => {
             ))}
           </div>
           {currentToolId && (
-            <div className="w-full flex flex-col h-80 px-16 sticky top-64 z-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="w-full flex flex-col h-80 px-16 sticky top-64 z-0"
+            >
               {AiTools.filter((tool) => tool.id === currentToolId).map((tool) => (
                 <div key={tool.id}>
-                  <h2 className="text-5xl font-spline font-bold text-white mt-8 mb-4 transition-opacity duration-500 opacity-100 transform translate-y-0">
+                  <motion.h2
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="text-5xl font-spline font-bold text-white mt-8 mb-4"
+                  >
                     {tool.title}
-                  </h2>
-                  <p className="text-lg font-thin font-spline text-white mb-16 transition-opacity duration-500 opacity-100 transform translate-y-0">
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="text-lg font-thin font-spline text-white mb-16"
+                  >
                     {tool.description}
-                  </p>
-                  <a
+                  </motion.p>
+                  <motion.a
                     href={tool.buttonLink}
-                    className="bg-violet-500 text-white px-6 py-4 rounded-lg hover:bg-violet-600 transition-opacity duration-500 opacity-100 transform translate-y-0"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="bg-violet-500 text-white px-6 py-4 rounded-lg hover:bg-violet-600"
                   >
                     {tool.buttonText}
-                  </a>
+                  </motion.a>
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -112,4 +142,4 @@ const AITools = () => {
   );
 };
 
-export default AITools;
+export default AITools; 
