@@ -22,7 +22,7 @@ const ToolItem = ({ tool, onVisibilityChange }) => {
     >
       <div>
         <video
-          className="w-full h-full rounded-xl"
+          className="w-full h-full mt-40  rounded-xl"
           src={tool.videoUrl}
           autoPlay
           loop
