@@ -64,7 +64,7 @@ const AITools = () => {
   }, [toolVisibility, currentToolId]);
 
   return (
-    <section className='bg-black'>
+    <section className=''>
       <div className="container mx-auto p-8 mt-16">
         {/* Header Section */}
         <div className="text-center my-32">
