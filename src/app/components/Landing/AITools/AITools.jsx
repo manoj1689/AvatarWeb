@@ -1,5 +1,5 @@
-'use client'
-import React, { useState, useEffect ,useCallback} from 'react';
+'use client';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -42,7 +42,6 @@ const AITools = () => {
   const [toolVisibility, setToolVisibility] = useState(new Map());
   const [AiTools, setAITools] = useState([]);
 
-  // Use useCallback to memoize the handler
   const handleVisibilityChange = useCallback((toolId, isInView) => {
     setToolVisibility(prev => new Map(prev).set(toolId, isInView));
   }, []);
@@ -55,16 +54,14 @@ const AITools = () => {
   }, []);
 
   useEffect(() => {
-    // Determine the most recent visible tool
     const visibleTool = [...toolVisibility.entries()]
       .filter(([_, isInView]) => isInView)
       .pop();
 
-    // Only update state if there's a new visible tool or it has changed
     if (visibleTool && visibleTool[0] !== currentToolId) {
       setCurrentToolId(visibleTool[0]);
     }
-  }, [toolVisibility, currentToolId]); // Added currentToolId as a dependency
+  }, [toolVisibility, currentToolId]);
 
   return (
     <section className='bg-black'>
@@ -144,3 +141,4 @@ const AITools = () => {
 };
 
 export default AITools;
+
