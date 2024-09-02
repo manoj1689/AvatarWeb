@@ -68,23 +68,17 @@ const AITools = () => {
       <div className="container mx-auto p-8 mt-16">
         {/* Header Section */}
         <div className="text-center my-32">
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 text-5xl font-spline font-bold pb-8 text-center"
+          <div
+          
           >
             Our AI Tools Suite
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-gray-300 text-xl lg:max-w-[40%] mx-auto font-medium font-spline leading-7 text-center mb-8"
+          </div>
+          <div
+           
           >
             Revolutionize your creative workflow with ImagineArt AI Tools Suite.
             This suite empowers you with cutting-edge AI technology to generate stunning AI art and captivating videos.
-          </motion.div>
+          </div>
         </div>
         <div className="flex">
           <div className="space-y-8 w-full">
