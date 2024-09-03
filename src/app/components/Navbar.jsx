@@ -85,7 +85,7 @@ const Navbar = () => {
               {/* Show user details if logged in */}
               {session ? (
                 <>
-                  <span className="text-black">
+                  <span className="text-white">
                     {session.user?.name || session.user?.email}
                   </span>
                   <button
