@@ -22,7 +22,7 @@ const ToolItem = ({ tool, onVisibilityChange }) => {
     >
       <div>
         <video
-          className="w-full h-full mt-36  rounded-xl"
+          className="w-full h-full mt-36 rounded-xl"
           src={tool.videoUrl}
           autoPlay
           loop
@@ -67,7 +67,7 @@ const AITools = () => {
 
   return (
     <section className='bg-black'>
-      <div className="container mx-auto p-8 mt-16">
+      <div className="container mx-auto p-8 ">
         {/* Header Section */}
         <div className="text-center my-32">
           <motion.div

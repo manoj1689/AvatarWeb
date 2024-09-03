@@ -1,83 +1,168 @@
+'use client'
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const PrivacyPolicy = () => {
+const PrivacyAndSecurity = () => {
   return (
-    <div className="bg-gray-100 text-gray-900 p-8 md:p-16 font-sans">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Privacy Policy</h1>
-        <p className="text-sm text-gray-600 mb-6"><strong>Last Updated:</strong> September 2, 2024</p>
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8 border border-gray-200">
+        <h1 className="text-4xl font-bold text-center text-blue-800 mb-6">
+          Privacy & Security
+        </h1>
         
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">1. Introduction</h2>
-        <p className="mb-6">
-          Welcome to SmartGrader! Your privacy is important to us. This Privacy Policy explains how we collect, use, 
-          and protect your personal information when you visit our website, use our services, or interact with us in any way.
-        </p>
+        {/* GDPR Compliance Section */}
+        <motion.section 
+          className="mb-8 p-6 bg-blue-50 border border-blue-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl font-semibold text-blue-700 mb-4">
+            GDPR Compliance
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            The General Data Protection Regulation (GDPR) sets guidelines for the collection and processing of personal information from individuals who live in the European Union (EU). We are committed to protecting your data privacy and ensuring that your personal information is handled in accordance with GDPR requirements.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Under GDPR, you have the right to access your personal data, rectify inaccuracies, request the deletion of your data, restrict or object to its processing, and obtain a copy of your data in a structured, machine-readable format. If you wish to exercise any of these rights, please contact us at <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">2. Information We Collect</h2>
-        <p className="mb-4">We may collect and process the following types of personal information:</p>
-        <ul className="list-disc list-inside mb-6 space-y-2">
-          <li><strong>Personal Details:</strong> Name, email address, phone number, job title, and company/educational institution.</li>
-          <li><strong>Account Information:</strong> Login credentials, user preferences, and usage data.</li>
-          <li><strong>Assessment Data:</strong> Responses, scores, and feedback from mock interviews and assessments.</li>
-          <li><strong>Technical Information:</strong> IP address, browser type, operating system, and device information.</li>
-          <li><strong>Cookies:</strong> We use cookies to enhance your experience, analyze site traffic, and personalize content.</li>
-        </ul>
+        {/* Collection of Personal Information */}
+        <motion.section 
+          className="mb-8 p-6 bg-green-50 border border-green-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h2 className="text-2xl font-semibold text-green-700 mb-4">
+            Collection of Personal Information
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            We collect personal information from you when you use our services. This may include information such as your name, email address, phone number, payment details, and any other information you choose to provide. We also collect technical data, including IP addresses, browser types, and usage data, to improve our services and ensure their security.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            We may use cookies and similar tracking technologies to collect information about your interactions with our website, such as pages viewed and links clicked. This information helps us understand your preferences and enhance your experience on our site.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">3. How We Use Your Information</h2>
-        <p className="mb-4">Your personal information is used to:</p>
-        <ul className="list-disc list-inside mb-6 space-y-2">
-          <li>Provide and improve our services.</li>
-          <li>Process your account registration and manage your user account.</li>
-          <li>Deliver personalized feedback and track your progress.</li>
-          <li>Communicate with you regarding updates, promotions, and support.</li>
-          <li>Analyze user activity to improve the SmartGrader platform.</li>
-          <li>Ensure the security of our services.</li>
-        </ul>
+        {/* Use of Personal Information */}
+        <motion.section 
+          className="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <h2 className="text-2xl font-semibold text-yellow-700 mb-4">
+            Use of Personal Information
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            We use the personal information we collect to provide, maintain, and improve our services. This includes processing transactions, personalizing your experience, communicating with you, and ensuring the security of our platform. We may also use your information to send you promotional content or marketing communications, but only if you have given us your consent to do so.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            We may share your personal information with trusted third-party service providers who assist us in operating our website, conducting our business, or servicing you. These third parties are required to keep your information confidential and secure, and they may not use it for any other purpose.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">4. Data Sharing and Disclosure</h2>
-        <p className="mb-4">We do not share your personal information with third parties except in the following cases:</p>
-        <ul className="list-disc list-inside mb-6 space-y-2">
-          <li><strong>Service Providers:</strong> We may share your data with trusted service providers who assist us in operating our website, conducting our business, or providing services to you.</li>
-          <li><strong>Legal Obligations:</strong> We may disclose your information if required by law or in response to legal requests.</li>
-          <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of the transaction.</li>
-        </ul>
+        {/* Individual Rights */}
+        <motion.section 
+          className="mb-8 p-6 bg-red-50 border border-red-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <h2 className="text-2xl font-semibold text-red-700 mb-4">
+            Individual Rights
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            You have the right to know what personal information we hold about you and how it is being used. You also have the right to request that we correct any inaccuracies in your data or delete your information entirely. Additionally, you can request that we restrict the processing of your data or object to its processing altogether.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            To exercise any of these rights, please contact our Data Protection Officer (DPO) at <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>. We will respond to your request within the timeframe required by law.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">5. Your Rights</h2>
-        <p className="mb-4">Under GDPR, CPRA, and other applicable laws, you have the right to:</p>
-        <ul className="list-disc list-inside mb-6 space-y-2">
-          <li>Access the personal information we hold about you.</li>
-          <li>Request the correction of inaccurate or incomplete information.</li>
-          <li>Request the deletion of your data.</li>
-          <li>Object to the processing of your data or request restrictions.</li>
-          <li>Request the transfer of your data to another service provider.</li>
-          <li>Withdraw your consent at any time, where we rely on your consent to process your information.</li>
-        </ul>
+        {/* CCPA Compliance */}
+        <motion.section 
+          className="mb-8 p-6 bg-purple-50 border border-purple-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
+          <h2 className="text-2xl font-semibold text-purple-700 mb-4">
+            CCPA Compliance
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            The California Consumer Privacy Act (CCPA) provides California residents with specific rights regarding their personal information. These include the right to know what personal data is being collected, the right to request deletion of their data, and the right to opt-out of the sale of their personal information.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            We do not sell your personal information to third parties. If you are a California resident and would like to exercise your rights under CCPA, please contact us at <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">6. Data Security</h2>
-        <p className="mb-6">
-          We implement appropriate technical and organizational measures to protect your data against unauthorized access, 
-          alteration, disclosure, or destruction. However, please note that no method of transmission over the internet or electronic storage is completely secure.
-        </p>
+        {/* Data Retention */}
+        <motion.section 
+          className="mb-8 p-6 bg-teal-50 border border-teal-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.0 }}
+        >
+          <h2 className="text-2xl font-semibold text-teal-700 mb-4">
+            Data Retention
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. Once your data is no longer needed, we will securely delete or anonymize it.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            If you wish to request the deletion of your data, please contact us at <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>. We will process your request in accordance with applicable laws.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">7. Cookies and Tracking Technologies</h2>
-        <p className="mb-6">
-          We use cookies and similar tracking technologies to enhance your experience on our platform, analyze usage, and personalize content.
-          You can manage your cookie preferences through your browser settings.
-        </p>
+        {/* Policy */}
+        <motion.section 
+          className="p-6 bg-indigo-50 border border-indigo-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.2 }}
+        >
+          <h2 className="text-2xl font-semibold text-indigo-700 mb-4">
+            Policy
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            Our policies are designed to ensure transparency and accountability in the way we handle your personal information. We regularly review and update our policies to reflect changes in regulations, technologies, and business practices. For the latest updates, please refer to this page periodically.
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            If you have any questions or need further clarification about our policies, feel free to contact us at <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>.
+          </p>
+        </motion.section>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">8. Changes to This Policy</h2>
-        <p className="mb-6">
-          We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. 
-          We will notify you of any significant changes through our website or via email.
-        </p>
-
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">9. Contact Us</h2>
-        <p className="mb-6">If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
-        <p>Email: <a href="mailto:info@smartgrader.in" className="text-blue-500 hover:underline">info@smartgrader.in</a></p>
+        {/* Contact Information */}
+        <motion.section 
+          className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-md"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.4 }}
+        >
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+            Contact Information
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            If you have any questions or concerns about our privacy and security practices, please reach out to us:
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Email: <a href="mailto:info@smartgrader.in" className="text-blue-600 underline">info@smartgrader.in</a>
+          </p>
+          <p className="text-gray-700 leading-relaxed mt-1">
+          Address:Flat No: 3302, Tower 5, Hero Homes, sector 104, Dwarka Expressway, Gurugram.122001
+          </p>
+        </motion.section>
       </div>
     </div>
   );
 };
 
-export default PrivacyPolicy;
+export default PrivacyAndSecurity;
+
+
+
 

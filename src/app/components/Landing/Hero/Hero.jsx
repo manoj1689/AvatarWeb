@@ -114,63 +114,65 @@ const Hero = () => {
       </div>
 
       {/* Foreground Section */}
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-opacity-80 bg-black p-8">
-        <div className="container flex flex-col mx-auto justify-center items-center">
-          {/* Animated Title */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 text-7xl font-spline font-bold pb-8 text-center"
-          >
-            Imagine AI Art Generator
-          </motion.div>
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-8" style={{ background: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 100%)' }}>
+  <div className="container flex flex-col mx-auto justify-center items-center">
+    {/* Animated Title */}
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 text-7xl font-spline font-bold pb-8 text-center"
+    >
+      Imagine AI Art Generator
+    </motion.div>
 
-          {/* Animated Description */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-gray-300 text-xl w-1/2 mx-auto font-spline leading-6 text-center mb-8"
-          >
-            Create AI Art and turn your imaginations into reality with Imagine&apos;s AI Art Generator and produce stunning visuals to cover up your artistic thoughts.
-          </motion.div>
+    {/* Animated Description */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="text-gray-300 text-xl w-1/2 mx-auto font-spline leading-6 text-center mb-8"
+    >
+      Create AI Art and turn your imaginations into reality with Imagine&apos;s AI Art Generator and produce stunning visuals to cover up your artistic thoughts.
+    </motion.div>
 
-          {/* Create For Free Button for small screens */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="block lg:hidden"
-          >
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300">
-              Create For Free
-            </button>
-          </motion.div>
+    {/* Create For Free Button for small screens */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="block lg:hidden"
+    >
+      <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300">
+        Create For Free
+      </button>
+    </motion.div>
 
-          {/* Input and Create Button in a Row for large screens */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="hidden lg:flex items-center bg-white p-1 rounded-full border-[6px] border-gray-600 w-3/4 mt-4 lg:mt-0"
-          >
-            {/* Input field */}
-            <input
-              type="text"
-              value={selectedPrompt}
-              onFocus={handleFocus}
-              onChange={handleChange}
-              className="flex-grow m-2 p-2 rounded-lg w-full outline-none"
-              placeholder="Enter your prompt here"
-            />
-            {/* Button */}
-            <button className="bg-blue-500 text-white px-8 py-2 ml-2 m-1 rounded-full border-[6px] border-gray-400 hover:bg-blue-600 transition duration-300">
-              <span className="text-lg font-spline">Create</span>
-            </button>
-          </motion.div>
-        </div>
-      </div>
+    {/* Input and Create Button in a Row for large screens */}
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      className="hidden lg:flex items-center bg-white p-1 rounded-full border-[6px] border-gray-600 md:w-1/2 lg:w-3/5 mt-4 lg:mt-0"
+    >
+      {/* Input field */}
+      <input
+        type="text"
+        value={selectedPrompt}
+        onFocus={handleFocus}
+        onChange={handleChange}
+        className="flex w-full m-2 p-2 rounded-lg outline-none"
+        placeholder="Enter your prompt here"
+      />
+      {/* Button */}
+      <button className="bg-blue-500 text-white px-8 py-2 ml-2 m-1 rounded-full border-[6px] border-gray-400 hover:bg-blue-600 transition duration-300">
+        <span className="text-lg font-spline">Create</span>
+      </button>
+    </motion.div>
+  </div>
+</div>
+
+
     </section>
   );
 };
