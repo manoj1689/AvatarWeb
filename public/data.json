@@ -4,79 +4,121 @@
     "Muslim Influences": [
       {
         "Prompt ID": 20,
-        "Prompt": "cinematic photo Instagram photo of a man img as a Sufi saint, in a dargah, traditional attire, prayer cap, natural skin, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img as a Sufi saint, in a dargah, {dress_style} attire, prayer cap, natural skin, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p1.png",
         "Output Image": "outputs/output_20.png",
         "Image URL": "images/7c1455b9-4bb9-4cd9-bf3d-f69f0315d946.png"
+      },
+      {
+        "Prompt ID": 37,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a young man img dressed in regal, {dress_style} attire, featuring intricate gold embroidery and a vibrant turban. The man is smiling warmly as he stands by a serene palace courtyard, with a calm pool of water in the background. The setting should have natural lighting, highlighting the rich textures and colors of the clothing, while the background is slightly blurred to create a soft bokeh effect. The image should be highly detailed, captured with a 35mm film lens, giving it a professional, timeless quality.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/ef76b7b8-58b5-4d00-85c8-c6b4d1bdf999.png"
+      },
+      {
+        "Prompt ID": 38,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a young man img in {dress_style} religious attire, featuring an ornate white and gold robe with a matching cap. The man is smiling serenely, with his hands clasped in prayer, standing in a beautifully designed mosque with tall arches and intricate details. The background includes other worshippers, slightly blurred to create a soft bokeh effect. The image should capture the peaceful atmosphere with natural, warm lighting and vibrant colors, rendered in high detail with a 35mm film quality for a timeless, professional look.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/d60cd7cb-5e70-4b8b-bfaa-2b34ebb392fa.png"
+      },
+      {
+        "Prompt ID": 39,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of an elegant older woman img in {dress_style} black attire, featuring a delicately adorned hijab and a string of prayer beads in her hands. The woman is smiling gently, with a serene expression, her hands softly framing her face. The background is softly blurred, with warm, natural lighting that highlights her graceful features and the intricate details of her clothing. The image should be captured with a 35mm film lens, producing a professional, highly detailed portrait with a timeless, respectful atmosphere.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/d90a3ada-d9e9-4dc6-908d-3cd84291b4d6.png"
+      },
+      {
+        "Prompt ID": 40,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img wearing a {dress_style} hijab in a mosque setting, with a serene expression and hands in prayer. The background features an intricately designed mosque interior with soft lighting and vibrant colors. Capture the scene with a 35mm lens for a filmic look, emphasizing bokeh effects in the background. The image should be highly detailed, professional, with a 4K resolution, and evoke a sense of peace and spirituality.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/c81272dc-662d-4f1b-93c3-0c321ea4ba2a.png"
+      },
+      {
+        "Prompt ID": 41,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img wearing {dress_style} Islamic attire, including a white turban and a cream-colored robe with golden accents, reading a Quran under warm, soft candlelight. The background should feature an ornate interior with a bokeh effect, creating a serene and spiritual atmosphere. Capture the scene with a 35mm lens for a filmic look, ensuring the image is highly detailed, professional, and evokes a sense of devotion and tranquility.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/1837a053-8951-4105-afdc-569c6c7f44f5.png"
+      },
+      {
+        "Prompt ID": 42,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img wearing a {dress_style} deep blue hijab, adorned with intricate henna designs on her hands, and a subtle, elegant headpiece with red accents. The background should be a sandy, sunlit setting, with shadows cast in a natural, outdoor environment. Capture the scene with a 35mm lens to achieve a filmic look, ensuring the image is highly detailed, professional, and emphasizes the vibrant colors and intricate details of the attire and henna.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/227c9cd3-99f4-450f-a633-a280504c9294.png"
       }
     ],
     "Sikh Culture": [
       {
         "Prompt ID": 10,
-        "Prompt": "cinematic photo Instagram photo of a Sikh man img with a turban, holding a kirpan, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh man img with a turban, holding a kirpan, natural skin, {dress_style} attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p1.png",
         "Output Image": "outputs/output_10.png",
         "Image URL": "images/ed09bc76-8fd1-4f17-81d9-b3f0ee468e9d.png"
       },
       {
         "Prompt ID": 11,
-        "Prompt": "cinematic photo Instagram photo of a saint img as Guru Nanak, peaceful expression, meditating under a tree, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a saint img as Guru Nanak, peaceful expression, meditating under a tree, natural skin, {dress_style} attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p2.png",
         "Output Image": "outputs/output_11.png",
         "Image URL": "images/9f6a6b2b-82ea-4c3d-9e0c-1fffb60262dd.png"
       },
       {
         "Prompt ID": 12,
-        "Prompt": "cinematic photo Instagram photo of a Sikh woman img in traditional attire, in front of the Golden Temple, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh woman img in traditional attire, in front of the Golden Temple, natural skin, {dress_style} attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p8.png",
         "Output Image": "outputs/output_12.png",
         "Image URL": "images/659c32fd-a52e-4f00-b4a7-7b20fc67020e.png"
       },
       {
         "Prompt ID": 13,
-        "Prompt": "cinematic photo Instagram photo of a Sikh warrior img on horseback, traditional armor, natural skin, traditional attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh warrior img on horseback, traditional armor, natural skin, {dress_style} attire, hard shadows, colorful. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p4.png",
         "Output Image": "outputs/output_13.png",
         "Image URL": "images/b01878e1-2afb-4a71-88f2-4cb75ade0762.png"
       },
       {
         "Prompt ID": 14,
-        "Prompt": "cinematic photo Instagram photo of a Sikh man img in a traditional turban, praying at the Gurudwara, serene expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh man img in a traditional turban, praying at the Gurudwara, serene expression. {dress_style} attire, 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p5.png",
         "Output Image": "outputs/output_14.png",
         "Image URL": "images/d6b5acaf-ab02-4677-9feb-08c4dcb543f1.png"
       },
       {
         "Prompt ID": 15,
-        "Prompt": "cinematic photo Instagram photo of a Sikh woman img, wearing a traditional Patiala suit, joyful expression, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh woman img, wearing a {dress_style} Patiala suit, joyful expression, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p6.png",
         "Output Image": "outputs/output_15.png",
         "Image URL": "images/ae5abfac-3073-42c3-9727-c62970101a17.png"
       },
       {
         "Prompt ID": 16,
-        "Prompt": "cinematic photo Instagram photo of a Sikh child img, in traditional attire, running joyfully in a field, sunny day. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh child img, in {dress_style} attire, running joyfully in a field, sunny day. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p2.png",
         "Output Image": "outputs/output_16.png",
         "Image URL": "images/75827ac1-92b7-47fb-8a85-83bd97cead31.png"
       },
       {
         "Prompt ID": 17,
-        "Prompt": "cinematic photo Instagram photo of a Sikh elder img, in a white turban, sitting peacefully in a garden, wise expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh elder img, in a white turban, {dress_style} attire, sitting peacefully in a garden, wise expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p3.png",
         "Output Image": "outputs/output_17.png",
         "Image URL": "images/4e032317-723f-4094-9e2c-7cc65207fd51.png"
       },
       {
         "Prompt ID": 18,
-        "Prompt": "cinematic photo Instagram photo of a Sikh couple img, both in traditional attire, sharing a laugh, colorful setting. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh couple img, both in {dress_style} attire, sharing a laugh, colorful setting. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p1.png",
         "Output Image": "outputs/output_18.png",
         "Image URL": "images/656a1213-1ddf-479c-b0e0-02ec47cb8d61.png"
       },
       {
         "Prompt ID": 19,
-        "Prompt": "cinematic photo Instagram photo of a Sikh family img, in traditional attire, celebrating a festival, joyful expressions, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a Sikh family img, in {dress_style} attire, celebrating a festival, joyful expressions, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p1.png",
         "Output Image": "outputs/output_19.png",
         "Image URL": "images/3c615f13-ffe3-4afa-b30a-89e390cbb5a6.png"
@@ -85,42 +127,263 @@
     "Religional Attire": [
       {
         "Prompt ID": 0,
-        "Prompt": "cinematic photo Instagram photo of a woman img in Himachali traditional attire, standing in a mountainous background, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img in Himachali {dress_style} attire, standing in a mountainous background, vibrant colors. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p6.png",
         "Output Image": "outputs/output_0.png",
         "Image URL": "images/3ca91b76-ad90-47d2-8686-9db0e9532fab.png"
       },
       {
         "Prompt ID": 1,
-        "Prompt": "cinematic photo Instagram photo of a man img in Naga traditional attire, holding a spear, forest background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img in Naga {dress_style} attire, holding a spear, forest background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p2.png",
         "Output Image": "outputs/output_1.png",
         "Image URL": "images/bfb028ce-6619-4de8-a75b-67ce60d9442d.png"
       },
       {
         "Prompt ID": 2,
-        "Prompt": "cinematic photo Instagram photo of a woman img in traditional Bengali saree, standing by the river, peaceful expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img in {dress_style} Bengali saree, standing by the river, peaceful expression. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p8.png",
         "Output Image": "outputs/output_2.png",
         "Image URL": "images/2b111d98-fa8c-4df9-b87e-1a4438818aff.png"
       },
       {
         "Prompt ID": 3,
-        "Prompt": "cinematic photo Instagram photo of a man img in traditional South Indian attire, performing a cultural dance, temple background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img in {dress_style} South Indian attire, performing a cultural dance, temple background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p4.png",
         "Output Image": "outputs/output_3.png",
         "Image URL": "images/9710605f-8e5d-4811-8e32-da4b2e9c2d21.png"
       },
       {
         "Prompt ID": 4,
-        "Prompt": "cinematic photo Instagram photo of a woman img in traditional North Eastern attire, smiling, vibrant colors, natural background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img in {dress_style} North Eastern attire, smiling, vibrant colors, natural background. . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
         "Reference Image": "p10.png",
         "Output Image": "outputs/output_4.png",
         "Image URL": "images/d8926800-43b4-4d59-92f3-d78d632c8bea.png"
+      },
+      {
+        "Prompt ID": 28,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a woman img in {dress_style} and elaborate Indian costume with intricate makeup that features vibrant red, green, and white face paint. She is adorned with ornate gold jewelry, including a crown-like headpiece with detailed carvings and rich decorations. The image should highlight her expressive eyes and gentle smile, capturing the regal and cultural essence of the attire. The setting should be indoors with soft, warm lighting that creates a dramatic effect, adding depth to the rich textures and colors. The focus should be sharp on her face, with a slightly blurred, bokeh background to enhance the subject's prominence. The image should be highly detailed, professional, and evoke a sense of elegance and tradition.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/4c0bea0d-9af1-462b-a6df-f94b9cf1a77e.png"
+      },
+      {
+        "Prompt ID": 29,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a young woman img in {dress_style} Indian attire, adorned with a vibrant marigold garland and dressed in a richly embroidered saree with a golden veil. She is smiling warmly, capturing the joy and spirit of the cultural event. The scene is set by the riverside during a festive gathering, with soft golden sunlight reflecting off the water. People in colorful traditional dresses are in the background, engaging in rituals. The image should have a shallow depth of field, with the focus on the woman while maintaining a bokeh effect for the background. The photo should be highly detailed, professional, with a warm and natural color palette, and evoke a sense of celebration and tradition.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/5e83efbc-150e-4675-8912-7f562ee77365.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 30,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/9b7f970a-a4dd-4fe7-bc43-cfdd5d6b8348.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 31,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/26aa2678-a73e-475d-9deb-4076c7a4c14f.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 32,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/60ffdea6-2049-4467-ad6d-e653565aa36d.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 33,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/054fe24f-9d17-4456-b103-9c216a214e2d.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 34,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/51eb05b1-f330-4336-8529-bfd173a36c19.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 35,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/164e5938-3d44-4dd6-925d-fe3d946a4b46.png"
+      },
+      {
+        "_comment": "This is a comment.",
+        "Prompt ID": 36,
+        "Prompt": "",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/49818b53-6939-4f2d-8e1b-52837a2c94a5.png"
       }
     ],
-    "Identity Mixing": [],
-    "Indian Superhero": [],
-    "Freedom Fighter": []
+    "Identity Mixing": [
+      {
+        "Prompt ID": 43,
+        "Prompt": "Generate a {cinematic_style} style {image_size} image of a young man img in a lively urban street market setting, holding a burger with a look of contentment. The background features colorful food stalls, bright lights, and a bustling atmosphere, with vibrant colors capturing the energy of the scene. The man is casually dressed {dress_style}, with neatly combed hair, and a soft bokeh effect highlights him against the slightly blurred, yet dynamic, background. The image should have a 35mm film aesthetic, with professional, highly detailed, and richly colored elements.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/0d05ee26-e287-4178-8ecc-c4e9fad88b3a.png"
+      },
+      {
+        "Prompt ID": 44,
+        "Prompt": "Generate a {cinematic_style} style {image_size} image of a young man img dressed in {dress_style} Indian attire, holding an ornate, glowing lantern with a warm smile. He is adorned with a detailed, gold necklace, standing against a serene temple backdrop with intricate architecture softly illuminated by the lantern's light. The scene is set during the early evening, with a natural environment featuring lush greenery in the background. The image should have a 35mm film aesthetic, capturing vibrant colors, rich details, and a professional, highly polished look.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/5db1a5f9-5ba7-4246-8daa-53d33bf992b1.png"
+      },
+      {
+        "Prompt ID": 45,
+        "Prompt": "Generate a {cinematic_style} style {image_size} highly detailed 4K photo of a young woman img in {dress_style} North Indian attire. She is wearing a vibrant red saree with golden embroidery, adorned with marigold garlands, and smiling gracefully. The background features a serene river with people engaging in a traditional ceremony. The scene is beautifully lit with natural sunlight, creating a warm and inviting atmosphere. Shot with a 35mm lens, capturing a professional film quality with shallow depth of field and soft bokeh, making the woman the focal point of the image.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/5e83efbc-150e-4675-8912-7f562ee77365.png"
+      },
+      {
+        "Prompt ID": 46,
+        "Prompt": "Generate a {cinematic_style} style {image_size} highly detailed 4K photo of a young man img cooking street food in a bustling Indian marketplace. He is wearing a {dress_style} crisp white shirt with rolled-up sleeves and a light green apron, focused on preparing multiple pancakes on a large griddle. The scene captures the vibrant atmosphere of the market with colorful stalls in the background and a soft smoky haze rising from the cooking. Shot with a 35mm lens, the image features professional film quality, shallow depth of field, and a warm, natural light that highlights the man's concentrated expression.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/9a1ce6fe-e8c6-4ca3-a4c8-bbcf94a305c9.png"
+      },
+      {
+        "Prompt ID": 47,
+        "Prompt": "Generate a {cinematic_style} style {image_size} highly detailed 4K photo of a young woman img in {dress_style} Indian attire, sipping tea from a metal cup at a street-side stall. She is dressed in a vibrant green saree with intricate gold patterns, accessorized with bangles and earrings. Her expressive eyes and subtle smile are partially hidden behind the cup. The background features a rustic outdoor setting with blurred market stalls and trees, giving the image a natural and warm ambiance. Shot with a 35mm lens, the photograph captures professional film quality with a shallow depth of field and soft bokeh, focusing on the woman's serene moment.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/20ac5cc9-b506-42ef-b4c9-d8c7aab7f228.png"
+      },
+      {
+        "Prompt ID": 48,
+        "Prompt": "Generate a {cinematic_style} style {image_size} highly detailed 4K photo of a woman img in a modern scientific lab, wearing a white lab coat over {dress_style} attire. The woman is smiling, with vibrant and natural lighting that enhances her facial features. The background includes laboratory equipment, such as flasks and test tubes, slightly blurred to create a soft bokeh effect. The photo should have a professional, highly detailed look with vibrant colors, captured with a 35mm film lens for a classic, realistic feel.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/497bbe75-cb07-4d23-b737-4588114c6917.png"
+      },
+      {
+        "Prompt ID": 49,
+        "Prompt": "Generate a {cinematic_style} style {image_size} highly detailed 4K photo of a young man img working at a vibrant street food stall, smiling as he prepares {dress_style} Indian sweets. The setting is an outdoor market with colorful stalls and bustling activity in the background. The man is wearing a bright apron over his casual attire, with an umbrella shading him and the stall. The image should have vibrant colors, natural lighting, and a soft bokeh effect to create a lively, detailed scene. The photo should have a professional, 35mm film quality with a realistic, warm atmosphere.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/36836005-b29e-47ce-a886-42be104b6ad1.png"
+      }
+    ],
+    "Indian Superhero": [
+      {
+        "Prompt ID": 50,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img dressed as a {dress_style} superhero in a maroon and gold suit with a sun emblem on his chest. The character should be standing confidently with hands on hips in a dramatic pose, set against a dynamic urban backdrop. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/shaktimaan.jpeg"
+      },
+      {
+        "Prompt ID": 51,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img {dress_style} dressed as a modern superhero in a black, leather suit with a distinctive mask. The character should be portrayed with a serious and intense expression, with wind-swept hair, set against a dramatic cityscape or sky. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/krish.jpeg"
+      },
+      {
+        "Prompt ID": 52,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a male superhero img with Indian {dress_style} elements. The character should be in a dynamic pose, wearing a traditional green and red costume with scales and a flowing brown trench coat. He holds a glowing staff with a blue orb at the top, exuding mystical energy. The background should have an ancient, mythical atmosphere with faint symbols and patterns, adding to the mysterious aura. The image should be a professional, 4K, highly detailed, and vibrant 35mm photograph with film-like quality, soft bokeh, and rich colors.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/nagraj.jpeg"
+      },
+      {
+        "Prompt ID": 53,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a male character img dressed in a futuristic, metallic silver suit with high-tech armor elements. The character should have a confident and stoic expression, wearing sleek sunglasses that reflect the surrounding environment. The background should feature a group of robotic figures, all clad in reflective metallic suits, creating a sci-fi atmosphere. The image should be a professional, 4K, highly detailed, and vibrant 35mm photograph with film-like quality, soft bokeh, and sharp contrasts.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/chitti.jpeg"
+      },
+      {
+        "Prompt ID": 54,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img dressed as a superhero in a dark, {dress_style} high-tech suit, with a serious expression, standing in a futuristic setting. The background should include sleek metallic surfaces, dim lighting, and subtle reflections. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/muga.jpeg"
+      },
+      {
+        "Prompt ID": 55,
+        "Prompt": "Generate a {cinematic_style} style {image_size} image of a regal man img in elaborate ancient Indian armor, with a stern expression and intense gaze. He is wearing a detailed, ornate crown with intricate patterns, and a grand, jewel-encrusted necklace. The background should feature a luxurious, golden throne with intricate carvings. The lighting is dramatic, with strong contrasts that emphasize the seriousness of the scene. Capture the image with a 35mm film aesthetic, ensuring a professional, highly detailed, and richly colored appearance.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/bhisma.jpeg"
+      },
+      {
+        "Prompt ID": 56,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a male character img in a traditional royal attire from ancient Indian epics. The character should be seated on an ornate throne, wearing a grand and intricately designed crown, with a majestic expression. His outfit should be adorned with jewels, pearls, and rich fabrics, showcasing his regal status. The background should feature a palatial setting with detailed architecture, pillars, and decorative elements, evoking a sense of historical grandeur. The image should be a professional, 4K, highly detailed, and vibrant 35mm photograph with film-like quality, soft bokeh, and warm lighting.",
+        "Reference Image": "p10.png",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/arjun.jpeg"
+      }
+    ],
+    "Freedom Fighter": [
+      {
+        "Prompt ID": 21,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img in {dress_style} military attire from the early 20th century, wearing a cap and glasses. The image should feature a calm and confident expression, with the man slightly smiling. The background should include a stylized representation of the Indian flag, with vibrant saffron, white, and green colors, and a prominent Ashoka Chakra in the center. The style should resemble a hand-painted portrait, with smooth brush strokes and soft shading. Use a 35mm film photograph aesthetic with natural lighting, bokeh effect, and a highly detailed, professional finish.",
+        "Reference Image": "subash.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/subash.jpeg"
+      },
+      {
+        "Prompt ID": 22,
+        "Prompt": "Create a {cinematic_style} style {image_size} photo of a man img in early 20th-century {dress_style} attire, featuring a fedora hat and a distinct mustache. The man should be depicted with a confident and calm expression, slightly smiling. The background should include a map of India, highlighted with colors representing various regions, using an artistic and textured design. The style should resemble a hand-painted portrait, with smooth brush strokes and a vintage feel. The image should have a 35mm film photograph aesthetic, with natural lighting, a subtle bokeh effect, and a highly detailed, professional finish.",
+        "Reference Image": "bhagat.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/bhagat.jpeg"
+      },
+      {
+        "Prompt ID": 23,
+        "Prompt": "Create a {cinematic_style} style {image_size} photo of an elderly man img wearing {dress_style} early 20th-century Indian attire, featuring a distinctive round hat and round glasses. The man should have a composed and serious expression, reflecting wisdom and determination. The background should be simple and neutral, with soft, muted tones to enhance the focus on the subject's face and attire. The style should evoke a classic black-and-white portrait, with high contrast, sharp details, and a timeless feel. The image should have a 35mm film photograph aesthetic, with a slight grain and a highly detailed, professional finish.",
+        "Reference Image": "savarkar.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/savarkar.jpeg"
+      },
+
+      {
+        "Prompt ID": 24,
+        "Prompt": "Generate a {cinematic_style} style {image_size} photo of a man img in {dress_style} North Indian warrior attire, with a turban, mustache, and intense expression, depicted against a vibrant and dynamic background. The image should have a historical and heroic tone, with warm, earthy colors, highlighting the man’s strong features. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "mangl.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/mangl.jpeg"
+      },
+      {
+        "Prompt ID": 25,
+        "Prompt": "Generate a {cinematic_style} style {image_size} portrait of an elderly man img with a bald head, serious expression, and wearing {dress_style} Indian attire. The man should have deep, thoughtful eyes and be set against a warm, subtle background, evoking a sense of wisdom and resilience. The colors should be muted yet rich, with a focus on detailed facial features, showing signs of age and experience. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "svbpatel.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/svbpatel.jpeg"
+      },
+      {
+        "Prompt ID": 26,
+        "Prompt": "Generate a {cinematic_style} style {image_size} portrait of an elderly man img with round glasses, a shaved head, and a serene smile, dressed in simple white {dress_style} attire. The man should be depicted in a humble, peaceful setting with a soft, diffused background that evokes simplicity and calmness. The colors should be classic black and white, with a focus on capturing the gentle expression and the aura of nonviolence and wisdom. 35mm photograph, film, bokeh, professional, 4k, highly detailed.",
+        "Reference Image": "takla.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/takla.jpeg"
+      },
+      {
+        "Prompt ID": 27,
+        "Prompt": "A {cinematic_style} style {image_size} photograph of a woman img wearing {dress_style} North Indian attire. She is adorned in a richly embroidered red saree with intricate gold jewelry, including a heavy necklace, nose ring, and headpiece. Her head is covered with a matching dupatta, and she has a serious yet graceful expression. The background is a soft, neutral gray, keeping the focus on the woman. The photograph is taken in a 35mm film style with professional lighting, showcasing vibrant colors and a shallow depth of field, resulting in a bokeh effect that highlights the detailed textures of her attire and accessories. The image is highly detailed, with a 4K resolution, capturing the traditional elegance of the subject.",
+        "Reference Image": "lakshmi.jpeg",
+        "Output Image": "outputs/output_4.png",
+        "Image URL": "images/lakshmi.jpeg"
+      }
+    ]
   }
 ]
