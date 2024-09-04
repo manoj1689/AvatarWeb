@@ -1,12 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Header from "../Header";
 import Footer from "../Footer";
 import Image from "next/image";
 import { ClipLoader } from "react-spinners";
-
+import { RiUpload2Fill } from "react-icons/ri";
 interface Prompt {
   id: string;
   src: string;
@@ -34,12 +35,33 @@ export default function HomePage() {
   const [promptMap, setPromptMap] = useState<Map<string, string>>(new Map());
   const [positivePrompt, setPositivePrompt] = useState<string | null>(null);
   const [negativePrompt, setNegativePrompt] = useState<string | null>("");
-
   const [selectedCinematic, setSelectedCinematic] =
     useState<string>("cinematic");
-  const [selectedImageSize, setSelectedImageSize] = useState<string>("1:1");
+  // const [selectedImageSize, setSelectedImageSize] = useState<string>("1:1");
   const [selectedDressStyle, setSelectedDressStyle] =
     useState<string>("traditional");
+  const cardsRef = useRef<HTMLDivElement | null>(null);
+
+  const [selectedModel, setSelectedModel] = useState("cinematic");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const models = ["cinematic", "artistic", "photographic"];
+
+  const [selectedImageSize, setSelectedImageSize] = useState("512px*512px");
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+
+  const aspectRatios = [
+    { label: "1:1", value: "512px*512px", icon: "□" },
+    { label: "4:3", value: "680px*384px", icon: "▭" },
+    { label: "3:4", value: "384px*680px", icon: "▯" },
+    { label: "3:2", value: "768px*344px", icon: "▭" },
+    { label: "2:3", value: "344px*768px", icon: "▯" },
+    { label: "4:5", value: "408px*640px", icon: "▯" },
+    { label: "5:4", value: "640px*408px", icon: "▭" },
+  ];
+
+  const selectedAspectRatio =
+    aspectRatios.find((ar) => ar.value === selectedImageSize) ||
+    aspectRatios[0];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,10 +104,33 @@ export default function HomePage() {
       if (categoryList.some((cat) => cat.name === "Sikh Culture")) {
         setSelectedCategory("Sikh Culture");
       }
+      window.scrollTo(0, 0);
     };
 
     fetchData();
   }, []);
+
+  const resetParameters = () => {
+    // setUploadedImages([]);
+    setGeneratedImage(null);
+    setImageDimensions(null);
+    // setSelectedCategory(null);
+    setSelectedPrompt(null);
+    setSelectedImageId(null);
+    setPositivePrompt(null);
+    setNegativePrompt("");
+    setSelectedCinematic("cinematic");
+    setSelectedDressStyle("traditional");
+    setSelectedModel("cinematic");
+    setSelectedImageSize("512px*512px");
+    setIsModalOpen(false);
+    setIsModalOpen1(false);
+  };
+
+  const handleGenerateNewImage = () => {
+    resetParameters();
+    window.scrollTo(0, 0);
+  };
 
   // Parse the selected image size
   const [imageWidth, imageHeight] = selectedImageSize
@@ -99,19 +144,19 @@ export default function HomePage() {
     }
 
     const modifiedPrompt = positivePrompt
-      ?.replace(/{cinematic_style}/gi, selectedCinematic)
+      ?.replace(/{cinematic_style}/gi, selectedModel)
       .replace(/{image_size}/gi, selectedImageSize)
       .replace(/{dress_style}/gi, selectedDressStyle);
 
     console.log("Modified Prompt:", modifiedPrompt);
-    console.log("Style:", selectedCinematic);
+    console.log("Style:", selectedModel);
     console.log("Parsed Width:", imageWidth);
     console.log("Parsed Height:", imageHeight);
 
     const formData = new FormData();
     uploadedImages.forEach((file) => formData.append("files", file));
     formData.append("prompt", modifiedPrompt || "");
-    formData.append("style", selectedCinematic || "");
+    formData.append("style", selectedModel || "");
     formData.append("width", imageWidth.toString());
     formData.append("height", imageHeight.toString());
     formData.append("steps", "50");
@@ -147,23 +192,39 @@ export default function HomePage() {
     }
   };
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
-    if (files.length > 0) {
-      setUploadedImages(files);
-    }
-  };
-
-  const handleImageRemove = (index: number) => {
-    setUploadedImages((prev) => prev.filter((_, i) => i !== index));
-  };
-
   const handleImageSelect = (id: string) => {
     const prompt = promptMap.get(id);
     if (prompt) {
       setPositivePrompt(prompt);
       setSelectedImageId(id);
+      if (cardsRef.current) {
+        const rect = cardsRef.current.getBoundingClientRect();
+        window.scrollTo({
+          top: window.scrollY + rect.top,
+          left: window.scrollX + rect.left,
+          behavior: "smooth",
+        });
+      }
     }
+  };
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    setUploadedImages((prevImages) => [...prevImages, ...files]);
+  };
+
+  const handleImageRemove = (index: number) => {
+    setUploadedImages((prevImages) => prevImages.filter((_, i) => i !== index));
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const files = Array.from(event.dataTransfer.files);
+    setUploadedImages((prevImages) => [...prevImages, ...files]);
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
   };
 
   const handlePromptChange = (id: string, newPrompt: string) => {
@@ -260,55 +321,166 @@ export default function HomePage() {
                 ))}
           </div>
 
-          <div className="flex justify-between">
+          <div ref={cardsRef} className="flex justify-between">
             {/* First Card: Prompt Editing and Image Upload */}
-            <div className="w-1/2 bg-white shadow-lg rounded-lg p-6 mr-4">
+            <div className="w-1/5 bg-white shadow-lg rounded-lg p-6 mr-4">
+              {/* Image Upload */}
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold mb-2">Upload Image(s)</h2>
+                <div
+                  className="relative w-full min-h-[140px] p-4 border-2 border-dashed border-gray-300 rounded-lg text-center bg-gray-50 hover:bg-gray-100 flex flex-col items-center justify-center"
+                  onDrop={handleDrop}
+                  onDragOver={handleDragOver}
+                >
+                  <label className="cursor-pointer flex flex-col items-center">
+                   <RiUpload2Fill size={30} />
+                    <span className="text-gray-600">Upload Image</span>
+                    <input
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
+                  </label>
+                  {uploadedImages.length > 0 && (
+                    <div className="absolute inset-0 flex flex-wrap gap-2 p-2 bg-gray-100 rounded-lg overflow-auto">
+                      {uploadedImages.map((file, index) => (
+                        <div
+                          key={index}
+                          className="relative w-24 h-auto max-h-48 overflow-hidden bg-gray-200 rounded-lg p-2"
+                          style={{ height: "auto" }}
+                        >
+                          <img
+                            src={URL.createObjectURL(file)}
+                            alt={file.name}
+                            className="w-full h-full object-contain"
+                          />
+                          <button
+                            className="absolute top-1 right-1 text-white bg-red-600 rounded-full w-6 h-6 flex items-center justify-center"
+                            onClick={() => handleImageRemove(index)}
+                          >
+                            &times;
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
               {/* Cinematic Dropdown */}
               <div className="mb-8">
-                <label className="block text-gray-700 font-bold mb-2">
-                  Select Cinematic Style:
+                <label className="block text-gray-700 font-bold mb-2 text-left">
+                  Models
+                  <span className="relative inline-block group">
+                    <i className="ml-2 text-blue-600 cursor-pointer">i</i>
+                    <div className="pointer-events-none absolute left-0 bottom-full mb-2 w-48 p-2 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      Information about the models goes here.
+                    </div>
+                  </span>
                 </label>
-                <select
-                  value={selectedCinematic}
-                  onChange={(e) => setSelectedCinematic(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg"
-                >
-                  <option value="cinematic">Cinematic</option>
-                  <option value="photographic">Photographic</option>
-                  <option value="artistic">Artistic</option>
-                  {/* Add more options as needed */}
-                </select>
+
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {models.map((model) => (
+                    <button
+                      key={model}
+                      onClick={() => setSelectedModel(model)}
+                      className={`px-2 py-2 border border-gray-300 rounded-lg ${
+                        selectedModel === model
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-700"
+                      }`}
+                    >
+                      {model.charAt(0).toUpperCase() + model.slice(1)}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Image Size Dropdown */}
               <div className="mb-8">
-                <label className="block text-gray-700 font-bold mb-2">
-                  Select Image Size:
+                <label className="block text-gray-700 font-bold mb-2 text-left">
+                  Aspect Ratio
+                  <span className="relative inline-block group">
+                    <i className="ml-2 text-blue-600 cursor-pointer">i</i>
+                    <div className="pointer-events-none absolute left-0 bottom-full mb-2 w-48 p-2 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      Information about the models goes here.
+                    </div>
+                  </span>
                 </label>
-                <select
-                  value={selectedImageSize}
-                  onChange={(e) => setSelectedImageSize(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg"
-                >
-                  <option value="512px*512px">1:1</option>
-                  <option value="912px*288px">9:16</option>
-                  <option value="288px*912px">16:9</option>
-                  <option value="680px*384px">4:3</option>
-                  <option value="384px*680px">3:4</option>
-                  <option value="768px344px">3:2</option>
-                  <option value="344px*768px">2:3</option>
-                  <option value="408px*640px">4:5</option>
-                  <option value="640px*408px">5:4</option>
-                  <option value="192px*1024px">5:12</option>
-                  <option value="1024px*192px">12:5</option>
-                </select>
+
+                <div className="flex space-x-4">
+                  <button
+                    onClick={() => setIsModalOpen1(!isModalOpen1)}
+                    className="flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100"
+                  >
+                    <div className="flex items-center">
+                      <span className="text-2xl mr-2">
+                        {selectedAspectRatio.icon}
+                      </span>
+                      <span>{selectedAspectRatio.label}</span>
+                    </div>
+                    <i
+                      className={`text-gray-700 ${
+                        isModalOpen1 ? "rotate-180" : ""
+                      }`}
+                    >
+                      ▶
+                    </i>
+                  </button>
+                </div>
+
+                {/* Modal */}
+                {isModalOpen1 && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg max-w-lg w-full">
+                      <div className="flex justify-between items-center mb-4">
+                        <h3 className="text-xl font-bold">Aspect Ratio</h3>
+                        <button
+                          onClick={() => setIsModalOpen1(false)}
+                          className="text-gray-700 font-bold"
+                        >
+                          &times;
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4">
+                        {aspectRatios.map((ar) => (
+                          <button
+                            key={ar.value}
+                            onClick={() => {
+                              setSelectedImageSize(ar.value);
+                              setIsModalOpen1(false);
+                            }}
+                            className={`flex flex-col items-center justify-center p-4 border border-gray-300 rounded-lg ${
+                              selectedImageSize === ar.value
+                                ? "border-purple-500"
+                                : ""
+                            } hover:bg-gray-200`}
+                          >
+                            <div className="text-2xl">{ar.icon}</div>
+                            <div className="mt-2 text-sm">{ar.label}</div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Dress Style Dropdown */}
-              <div className="mb-8">
-                <label className="block text-gray-700 font-bold mb-2">
-                  Select Dress Style:
+              {/* <div className="mb-8">
+                <label className="block text-gray-700 font-bold mb-2 text-left">
+                  Dress Style
+                  <span className="relative inline-block group">
+                    <i className="ml-2 text-blue-600 cursor-pointer">i</i>
+                    <div className="pointer-events-none absolute left-0 bottom-full mb-2 w-48 p-2 bg-gray-800 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      Information about the models goes here.
+                    </div>
+                  </span>
                 </label>
+
                 <select
                   value={selectedDressStyle}
                   onChange={(e) => setSelectedDressStyle(e.target.value)}
@@ -318,66 +490,25 @@ export default function HomePage() {
                   <option value="modern">Modern</option>
                   <option value="casual">Casual</option>
                 </select>
-              </div>
-              <div className="mb-4">
-                <h2 className="text-lg font-semibold mb-2">Upload Image(s)</h2>
-                <input
-                  type="file"
-                  multiple
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer focus:outline-none"
-                />
-              </div>
-              <div>
-                {uploadedImages.length > 0 && (
-                  <div className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2">
-                      Uploaded Images
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {uploadedImages.map((file, index) => (
-                        <div
-                          key={index}
-                          className="relative w-24 h-24 overflow-hidden bg-gray-100 rounded-lg"
-                        >
-                          <Image
-                            src={URL.createObjectURL(file)}
-                            alt={file.name}
-                            fill
-                            className="object-cover"
-                          />
-                          <button
-                            className="absolute top-1 right-1 text-white bg-red-600 rounded-full w-5 h-5 flex items-center justify-center"
-                            onClick={() => handleImageRemove(index)}
-                          >
-                            &times;
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+              </div> */}
             </div>
 
             {/* Second Card: Generated Image and Download Option */}
-            <div className="w-1/2 bg-white shadow-lg rounded-lg p-6">
+            <div className="w-4/5 bg-white shadow-lg rounded-lg p-6">
               <div className="mb-4">
-                <h2 className="text-lg font-semibold mb-2">Generated Image</h2>
+                <h2 className="text-lg font-semibold mb-2">Image Generated</h2>
                 {isGenerating ? (
                   <div className="flex justify-center items-center h-56">
                     <ClipLoader color="#0000FF" size={50} />
                   </div>
                 ) : generatedImage ? (
-                  <div className="relative">
+                  <div className="relative flex justify-center items-center h-80">
                     <Image
                       src={generatedImage}
                       alt="Generated"
-                      width={imageWidth || 500}
-                      height={imageHeight || 500}
-                      style={{ width: `${imageWidth}px`, height: "auto" }}
-                      className="w-full h-auto object-cover rounded-lg"
+                      width={imageWidth}
+                      height={imageHeight}
+                      className="max-w-full max-h-full object-contain rounded-lg"
                     />
                   </div>
                 ) : (
@@ -387,12 +518,14 @@ export default function HomePage() {
                 )}
               </div>
               {generatedImage && (
-                <button
-                  onClick={handleDownload}
-                  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Download Image
-                </button>
+                <div className="flex flex-col items-center">
+                  <button
+                    onClick={handleDownload}
+                    className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors mt-4"
+                  >
+                    Download Image
+                  </button>
+                </div>
               )}
             </div>
           </div>
@@ -400,11 +533,25 @@ export default function HomePage() {
           {/* Generate Button */}
           <div className="flex justify-center">
             <button
-              onClick={handleGenerate}
-              className={buttonClassName}
-              disabled={isButtonDisabled}
+              onClick={() => {
+                if (generatedImage) {
+                  resetParameters();
+                  window.scrollTo(0, 0);
+                } else {
+                  // Start the image generation process
+                  handleGenerate();
+                }
+              }}
+              className={`${buttonClassName} mt-4`}
+              disabled={isButtonDisabled || isGenerating}
             >
-              Generate
+              {isGenerating ? (
+                <span>Generating Image...</span>
+              ) : generatedImage ? (
+                <span>Generate New Image</span>
+              ) : (
+                <span>Generate</span>
+              )}
             </button>
           </div>
         </div>

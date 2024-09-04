@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
-import ParallaxText from "../Hero/ParallexImage";
+import ParallaxText from "../../common/ParallexImage";
 
 const Hero = () => {
   const [list1Images, setList1Images] = useState([]);
