@@ -83,7 +83,7 @@ const Footer = () => {
 
             <div className="w-full lg:w-1/3  flex flex-col space-y-4">
               <span className="text-lg font-semibold font-spline text-white">
-                Let's Talk
+                Let&apos;s Talk
               </span>
               <p className="font-spline text-gray-400">{companyPhoneNumber}</p>
             </div>
