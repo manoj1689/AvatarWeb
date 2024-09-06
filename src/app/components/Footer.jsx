@@ -59,7 +59,7 @@ const Footer = () => {
                 <span className="text-gray-400 font-extralight font-spline">
                   About Us
                 </span>
-                <Link href="./Privacy&Policy" passHref>
+                <Link href="./privacy-policy" passHref>
                   <span className="text-gray-400 font-extralight font-spline">
                     Privacy & Policy
                   </span>
